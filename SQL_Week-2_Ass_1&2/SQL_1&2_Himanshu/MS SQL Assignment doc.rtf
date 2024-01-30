@@ -1,0 +1,914 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang16393\deflangfe16393{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fnil\fcharset2 Symbol;}}
+{\*\listtable 
+{\list\listhybrid
+{\listlevel\levelnfc23\leveljc0\levelstartat1{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}
+{\listlevel\levelnfc0\leveljc0\levelstartat1{\leveltext\'02\'01.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc4\leveljc0\levelstartat1{\leveltext\'02\'02.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc3\leveljc0\levelstartat1{\leveltext\'02\'03.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc2\leveljc0\levelstartat1{\leveltext\'02\'04.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc1\leveljc0\levelstartat1{\leveltext\'02\'05.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc0\leveljc0\levelstartat1{\leveltext\'02\'06.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc4\leveljc0\levelstartat1{\leveltext\'02\'07.;}{\levelnumbers\'01;}\jclisttab\tx0}
+{\listlevel\levelnfc23\leveljc1\levelstartat1{\leveltext\'01\'B7;}{\levelnumbers;}\f2\jclisttab\tx0}\listid1 }}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\*\generator Riched20 10.0.22000}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\nowidctlpar\sa200\sl276\slmult1\qc\b\f0\fs36\lang9 RDBMS MS-SQL ASSIGNMENTS WEEK-2\par
+\fs28\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\ul\fs32 ASSIGNMENT-1:\fs24\par
+\ulnone\b0\fs28 1) Describe 5 differences between RDBMS vs DBMS : \par
+\b Complexity:\b0\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls1\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\fs24 DBMS: Generally simpler and more lightweight compared to RDBMS.\par
+
+\pard 
+{\listtext\f0\u10625?\tab}\ls1\ilvl8\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 RDBMS: Offers a more complex structure with a set of rules to ensure data \tab consistency and relationships.\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\b\fs28 Scalability:\b0\fs24\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 DBMS: Might be suitable for smaller-scale applications or scenarios where data relationships are not critical.\par
+{\pntext\f2\'B7\tab}RDBMS: Preferred for larger-scale applications and situations where maintaining complex relationships is crucial.\par
+
+\pard{\*\pn\pnlvlcont\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\sa200\sl276\slmult1\b\fs28 Use Cases:\b0\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\fs24 DBMS: Suitable for simple data storage and retrieval scenarios where data relationships are not a primary concern.\par
+{\pntext\f2\'B7\tab}RDBMS: Ideal for applications that require complex data relationships, transactions, and data integrity, such as e-commerce systems or financial applications.\par
+
+\pard{\*\pn\pnlvlcont\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\sa200\sl276\slmult1\b\fs28 Data Redundancy:\b0\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\fs24 DBMS: May suffer from data redundancy, as there might not be a strict mechanism to avoid duplicate data.\par
+{\pntext\f2\'B7\tab}RDBMS: Aims to minimize data redundancy through normalization techniques, reducing the chances of duplicate information.\par
+
+\pard{\*\pn\pnlvlcont\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\sa200\sl276\slmult1\b\fs28 Cost and Overhead:\par
+
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\b0\fs24 DBMS: Generally less expensive and has lower overhead due to its simplicity.\par
+{\pntext\f2\'B7\tab}RDBMS: May involve higher costs and more system resources due to the complexity of managing relational structures.\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+\fs28 3) DDL QUERIES : \par
+\par
+\b\i 1) Inventory Management System:\b0\i0\par
+\par
+\fs24 CREATE TABLE category(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab name nvarchar(50) NOT NULL,\par
+\tab description text NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+) \par
+CREATE TABLE category(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab name nvarchar(50) NOT NULL,\par
+\tab description text NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+) \par
+\par
+CREATE TABLE customer(\par
+\tab id int NOT NULL,\par
+\tab name nvarchar(50) NOT NULL,\par
+\tab email nvarchar(320) NOT NULL,\par
+\tab mobile bigint NOT NULL,\par
+\tab address ntext NOT NULL,\par
+\tab dob date NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+ \par
+) \par
+\par
+CREATE TABLE orders(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab customer_id int NOT NULL,\par
+\tab supplier_id int NOT NULL,\par
+\tab date datetime NOT NULL,\par
+\tab status nvarchar(50) NOT NULL,\par
+\tab quentity int NOT NULL,\par
+\tab total_amount real NOT NULL,\par
+\tab unit_amount real NOT NULL,\par
+\tab payment_type nvarchar(50) NOT NULL,\par
+\tab payment_date datetime NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+)\par
+\par
+CREATE TABLE product(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab name nvarchar(50) NOT NULL,\par
+\tab categories_id int NOT NULL,\par
+\tab buying_price real NOT NULL,\par
+\tab selling_price real NOT NULL,\par
+\tab stock int NOT NULL,\par
+\tab description ntext NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+)\par
+\par
+CREATE TABLE supplier(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab name nvarchar(50) NOT NULL,\par
+\tab email nvarchar(320) NOT NULL,\par
+\tab mobile bigint NOT NULL,\par
+\tab address ntext NOT NULL,\par
+\tab shop_name nvarchar(50) NOT NULL,\par
+\tab dob date NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+) \par
+\par
+ALTER TABLE orders ADD CONSTRAINT FK_orders_customer FOREIGN KEY(customer_id)\par
+REFERENCES customer(id)\par
+\par
+ALTER TABLE orders ADD CONSTRAINT FK_orders_supplier FOREIGN KEY(supplier_id)\par
+REFERENCES supplier(id)\par
+\par
+ALTER TABLE product  ADD  CONSTRAINT FK_Product_Category FOREIGN KEY(categories_id) REFERENCES category(id)\par
+\par
+\b\i\fs28 2) Library Management System:\par
+\b0\i0\fs24\par
+\par
+CREATE TABLE author(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab first_name nvarchar(50) NOT NULL,\par
+\tab last_name nvarchar(50) NOT NULL,\par
+\tab email nvarchar(320) NOT NULL,\par
+\tab mobile bigint NOT NULL,\par
+\tab dob date NOT NULL,\par
+\tab address ntext NOT NULL,\par
+\tab nationality nvarchar(50) NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+ ) \par
+\par
+CREATE TABLE book(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab title nvarchar(50) NOT NULL,\par
+\tab author_id int NOT NULL,\par
+\tab publisher_id int NOT NULL,\par
+\tab genre nvarchar(50) NOT NULL,\par
+\tab language text NOT NULL,\par
+\tab published_date date NOT NULL,\par
+\tab avalable_copies int NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+)\par
+\par
+CREATE TABLE loan(\par
+\tab id int NOT NULL,\par
+\tab member_id int NOT NULL,\par
+\tab book_id int NOT NULL,\par
+\tab loan_date datetime NOT NULL,\par
+\tab return_date datetime NOT NULL,\par
+\tab returned bit NOT NULL,\par
+\tab fine decimal(10, 2) NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL\par
+)\par
+\par
+CREATE TABLE member(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab first_name nvarchar(50) NOT NULL,\par
+\tab last_name nvarchar(50) NOT NULL,\par
+\tab mobile bigint NOT NULL,\par
+\tab email nvarchar(320) NOT NULL,\par
+\tab address ntext NOT NULL,\par
+\tab join_date date NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+)\par
+\par
+CREATE TABLE publisher(\par
+\tab id int IDENTITY(1,1) NOT NULL,\par
+\tab name nvarchar(50) NOT NULL,\par
+\tab address text NOT NULL,\par
+\tab website text NOT NULL,\par
+\tab edtablished_date date NULL,\par
+\tab contact_person bigint NOT NULL,\par
+\tab created datetime NOT NULL,\par
+\tab modified datetime NOT NULL,\par
+)\par
+\par
+ALTER TABLE loan ADD  CONSTRAINT FK_Loan_Book FOREIGN KEY(book_id)\par
+REFERENCES book (id)\par
+\par
+ALTER TABLE loan ADD  CONSTRAINT FK_Loan_Member FOREIGN KEY(member_id)\par
+REFERENCES member (id)\par
+\par
+ALTER TABLE book ADD CONSTRAINT FK_Book_Author FOREIGN KEY(author_id)\par
+REFERENCES author (id)\par
+\par
+ALTER TABLE book ADD  CONSTRAINT FK_Book_Publisher FOREIGN KEY(publisher_id)\par
+REFERENCES publisher (id)\par
+\par
+\b\i\fs28 3) Social Media System:\par
+\b0\i0\fs24 CREATE TABLE Comment(\par
+\tab CommentID int IDENTITY(1,1) NOT NULL,\par
+\tab PostID int NOT NULL,\par
+\tab UserID int NOT NULL,\par
+\tab CommentText text NOT NULL,\par
+\tab CommentDate datetime NOT NULL,\par
+)\par
+\par
+CREATE TABLE Friendship(\par
+\tab FriendshipID int IDENTITY(1,1) NOT NULL,\par
+\tab UserID1 int NOT NULL,\par
+\tab UserID2 int NOT NULL,\par
+\tab Status varchar(20) NOT NULL,\par
+\tab RequestDate datetime NOT NULL,\par
+\par
+)\par
+\par
+CREATE TABLE Notification(\par
+\tab NotificationID int IDENTITY(1,1) NOT NULL,\par
+\tab UserID int NOT NULL,\par
+\tab NotificationText text NOT NULL,\par
+\tab IsRead bit NOT NULL,\par
+\tab NotificationDate datetime NOT NULL,\par
+)\tab\par
+\par
+CREATE TABLE Post(\par
+\tab PostID int IDENTITY(1,1) NOT NULL,\par
+\tab UserID int NOT NULL,\par
+\tab Content text NOT NULL,\par
+\tab PostDate datetime NOT NULL,\par
+\tab LikesCount int NOT NULL,\par
+)\par
+\par
+CREATE TABLE User(\par
+\tab UserID int IDENTITY(1,1) NOT NULL,\par
+\tab FirstName varchar(50) NOT NULL,\par
+\tab LastName varchar(50) NOT NULL,\par
+\tab Email varchar(100) NOT NULL,\par
+\tab BirthDate date NULL,\par
+)\par
+\par
+\par
+\b\i\fs28 4) Steps to change location of ldf and mdf file:\par
+\b0\i0\fs24 step 1). on Object explorer right click on database.\par
+step 2). Select new database.\par
+step 3). Then pop window open up change two file location from default to your location.\par
+step 4). Click Ok to create database.\par
+\par
+\par
+\par
+\par
+\par
+\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\qc\ul\b\fs32 ASSIGNMENT-2:\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+\ulnone\fs28 Inline Queries for Inventory management :\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\b0\fs24 SELECT name, buying_price, selling_price\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM product;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 2.\tab SELECT SUM(quantity) AS TotalQuantity\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM orders;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 3.\tab SELECT name AS ProductName, selling_price\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM product\par
+WHERE stock < 50;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+\b\fs28 Sub Queries for Inventory management :\par
+\b0\fs24\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 4.\tab SELECT name AS CustomerName, email\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM customer\par
+WHERE id IN (SELECT DISTINCT customer_id FROM orders);\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 5.\tab SELECT name AS ProductName\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM product\par
+WHERE categories_id = (SELECT id FROM category WHERE name = 'Electronics');\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 6.\tab SELECT name AS ProductName\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM product\par
+WHERE buying_price > (SELECT AVG(buying_price) FROM product);\par
+\par
+\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\b\fs28 Inline Queries for Library management :\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\b0\fs24 SELECT l.id AS LoanID, m.first_name + ' ' + m.last_name AS MemberName, l.loan_date, l.return_date\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM loan l INNER JOIN member m ON l.member_id = m.id;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 2.\tab SELECT title AS BookTitle, genre\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM book;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 3.\tab SELECT first_name + ' ' + last_name AS AuthorName, email\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM author;\par
+\fs28\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\b Sub Queries for Library management :\b0\par
+\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\nowidctlpar\fi-360\li720\sa200\sl276\slmult1\fs24 SELECT title AS BookTitle, \par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 (SELECT first_name + ' ' + last_name FROM author WHERE id = book.author_id) AS AuthorName\par
+FROM book;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 2.\tab SELECT first_name + ' ' + last_name AS MemberName\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM member\par
+WHERE id IN (SELECT member_id FROM loan WHERE fine > 0);\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+
+\pard\nowidctlpar\fi-360\li720\sa200\sl276\slmult1 3.\tab SELECT first_name + ' ' + last_name AS AuthorName\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1 FROM author\par
+WHERE id IN (SELECT DISTINCT author_id FROM book);\par
+\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\b\fs28 Inline Queries for social media app:\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1\b0\fs24 --    Retrieve all posts with the names of the users who created them\par
+\par
+SELECT Post.PostID, Post.Content, [User].FirstName, [User].LastName FROM Post\par
+INNER JOIN [User] ON Post.UserID = [User].UserID;\par
+\par
+--    Find the total number of likes for a specific post (e.g., PostID = 1)\par
+\par
+\tab SELECT SUM(LikesCount) AS TotalLikes\par
+\tab FROM Post WHERE PostID = 1;\par
+\par
+--    List users with more than 0 posts\par
+\par
+SELECT [User].UserID, [User].FirstName, [User].LastName\par
+FROM [User]\par
+WHERE UserID IN (\par
+    SELECT UserID\par
+    FROM Post\par
+    GROUP BY UserID\par
+    HAVING COUNT(PostID) > 0\par
+);\par
+\fs28\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1  \b Sub Queries for social media app:\par
+
+\pard\nowidctlpar\fi-720\li1440\sa200\sl276\slmult1\b0\fs24 --     Find posts with more than 1 comments\par
+\tab SELECT PostID, Content FROM Post\par
+\tab\tab WHERE PostID IN (SELECT PostID FROM Comment GROUP BY PostID HAVING COUNT(CommentID) > 1);\par
+\par
+--    Retrieve the user who made the first post\par
+\tab SELECT [User].FirstName, [User].LastName FROM [User]\par
+\tab WHERE UserID = (SELECT TOP 1 UserID FROM Post \tab ORDER BY PostDate ASC);\par
+\par
+--    Get the average number of comments per post\par
+\tab SELECT AVG(CommentsPerPost) AS \tab AverageCommentsPerPost\par
+\tab FROM (SELECT COUNT(CommentID) AS \tab CommentsPerPost FROM Comment GROUP BY PostID) AS \tab SubQuery;\f1\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1\f0\par
+\par
+\par
+\b\fs28\par
+
+\pard\nowidctlpar\fi720\sa200\sl276\slmult1 String Functions:\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1\b0\fs24 LEN:\par
+Description: Returns the number of characters in a string.\par
+SQL Query:\par
+SELECT LEN('Hello World') AS StringLength;\par
+\par
+UPPER:\par
+Description: Converts all characters in a string to uppercase.\par
+SQL Query:\par
+SELECT UPPER('Hello') AS UppercaseString;\par
+\par
+LOWER:\par
+Description: Converts all characters in a string to lowercase.\par
+\par
+SQL Query:\par
+SELECT LOWER('World') AS LowercaseString;\par
+\par
+LEFT:\par
+Description: Returns the left part of a string with a specified number of characters.\par
+SQL Query:\par
+SELECT LEFT('Database', 3) AS LeftSubstring;\par
+\par
+RIGHT:\par
+Description: Returns the right part of a string with a specified number of characters.\par
+SQL Query:\par
+SELECT RIGHT('Programming', 5) AS RightSubstring;\par
+\par
+SUBSTRING:\par
+Description: Extracts a substring from a string.\par
+SQL Query:\par
+SELECT SUBSTRING('Data Science', 6, 7) AS ExtractedSubstring;\par
+\par
+CHARINDEX:\par
+Description: Returns the starting position of a substring within a string.\par
+SQL Query:\par
+SELECT CHARINDEX('SQL', 'Learn SQL Server') AS Position;\par
+\par
+\par
+REPLACE:\par
+Description: Replaces occurrences of a specified string with another string.\par
+SQL Query:\par
+
+\pard\nowidctlpar\fi720\sa200\sl276\slmult1 SELECT REPLACE('Hello World', 'World', 'Universe') AS ReplacedString;\par
+
+\pard\nowidctlpar\li720\sa200\sl276\slmult1\par
+LTRIM:\par
+Description: Removes leading spaces from a string.\par
+SQL Query:\par
+SELECT LTRIM('   Trim Leading Spaces') AS TrimmedString;\par
+\par
+RTRIM:\par
+Description: Removes trailing spaces from a string.\par
+SQL Query:\par
+SELECT RTRIM('Trim Trailing Spaces   ') AS TrimmedString;\par
+\par
+CONCAT:\par
+Description: Concatenates two or more strings into a single string.\par
+SQL Query:\par
+SELECT CONCAT('Hello', ' ', 'World') AS ConcatenatedString;\par
+\par
+FORMAT:\par
+Description: Formats a value with the specified format.\par
+SQL Query:\par
+SELECT FORMAT(GETDATE(), 'yyyy-MM-dd') AS FormattedDate;\par
+REPLICATE:\par
+Description: Repeats a string a specified number of times.\par
+SQL Query:\par
+SELECT REPLICATE('ABC', 3) AS RepeatedString;\par
+\par
+LTRIM + RTRIM + REPLACE (Remove Multiple Spaces):\par
+Description: Removes multiple spaces from a string.\par
+SQL Query:\par
+SELECT REPLACE(LTRIM(RTRIM('   Remove   Multiple   Spaces   ')), ' ', ' ') AS CleanedString;\par
+\par
+STUFF:\par
+Description: Deletes a specified length of characters from a string and then inserts another string at a specified starting point.\par
+SQL Query:\par
+SELECT STUFF('Learn SQL Server', 7, 3, 'Oracle') AS ModifiedString;\par
+\par
+\par
+\par
+\par
+\b\fs28 Numeric/Math Functions:\par
+\b0\fs24 ABS:\par
+Description: Returns the absolute value of a numeric expression.\par
+SQL Query:\par
+SELECT ABS(-10) AS AbsoluteValue;\par
+\par
+\par
+ROUND:\par
+Description: Rounds a numeric value to the nearest integer or to the specified number of decimal places.\par
+SQL Query:\par
+SELECT ROUND(15.678, 2) AS RoundedValue;\par
+\par
+CEILING:\par
+Description: Returns the smallest integer greater than or equal to a numeric expression.\par
+SQL Query:\par
+SELECT CEILING(10.45) AS CeilingValue;\par
+\par
+FLOOR:\par
+Description: Returns the largest integer less than or equal to a numeric expression.\par
+SQL Query:\par
+SELECT FLOOR(10.75) AS FloorValue;\par
+\par
+POWER:\par
+Description: Returns the value of a numeric expression raised to the power of another numeric expression.\par
+SQL Query:\par
+SELECT POWER(2, 3) AS Result;\par
+\par
+SQRT:\par
+Description: Returns the square root of a numeric expression.\par
+SQL Query:\par
+SELECT SQRT(25) AS Result;\par
+\par
+EXP:\par
+Description: Returns the exponential value of a numeric expression.\par
+SQL Query:\par
+SELECT EXP(2) AS ExponentialValue;\par
+\par
+LOG:\par
+Description: Returns the natural logarithm of a numeric expression.\par
+SQL Query:\par
+SELECT LOG(10) AS LogarithmicValue;\par
+\par
+RAND:\par
+Description: Returns a random float value between 0 and 1.\par
+SQL Query:\par
+SELECT RAND() AS RandomValue;\par
+\par
+SIGN:\par
+Description: Returns the sign of a numeric expression (-1, 0, or 1).\par
+SQL Query:\par
+SELECT SIGN(-15) AS SignValue;\par
+\par
+TRUNCATE:\par
+Description: Truncates a numeric expression to the specified number of decimal places.\par
+SQL Query:\par
+SELECT TRUNCATE(15.678, 2) AS TruncatedValue;\par
+\par
+LOG10:\par
+Description: Returns the base-10 logarithm of a numeric expression.\par
+SQL Query:\par
+SELECT LOG10(100) AS LogBase10Value;\par
+\par
+DEGREES:\par
+Description: Converts radians to degrees.\par
+SQL Query:\par
+SELECT DEGREES(1.5708) AS DegreesValue;\par
+\par
+RADIANS:\par
+Description: Converts degrees to radians.\par
+SQL Query:\par
+SELECT RADIANS(90) AS RadiansValue;\par
+\par
+ATAN2:\par
+Description: Returns the arctangent of the quotient of its arguments.\par
+SQL Query:\par
+SELECT ATAN2(1, 2) AS ArctangentValue;\par
+\par
+\par
+\b\fs28 Date Functions:\par
+\b0\fs24 GETDATE:\par
+Description: Returns the current date and time.\par
+SQL Query:\par
+SELECT GETDATE() AS CurrentDateTime;\par
+\par
+YEAR:\par
+Description: Returns the year from a date.\par
+SQL Query:\par
+SELECT YEAR('2022-05-15') AS YearValue;\par
+\par
+MONTH:\par
+Description: Returns the month from a date.\par
+SQL Query:\par
+SELECT MONTH('2022-05-15') AS MonthValue;\par
+\par
+DAY:\par
+Description: Returns the day of the month from a date.\par
+SQL Query:\par
+SELECT DAY('2022-05-15') AS DayValue;\par
+\par
+DATEPART:\par
+Description: Returns a specified part of a date.\par
+SQL Query:\par
+SELECT DATEPART(YEAR, '2022-05-15') AS YearPart;\par
+\par
+DATEDIFF:\par
+Description: Returns the difference between two dates.\par
+SQL Query:\par
+SELECT DATEDIFF(DAY, '2022-01-01', '2022-02-01') AS DateDifference;\par
+\par
+DATEADD:\par
+Description: Adds a specified time interval to a date.\par
+SQL Query:\par
+SELECT DATEADD(MONTH, 3, '2022-05-15') AS NewDate;\par
+\par
+GETUTCDATE:\par
+Description: Returns the current UTC date and time.\par
+SQL Query:\par
+SELECT GETUTCDATE() AS CurrentUTCDateTime;\par
+\par
+FORMAT (Time Format):\par
+Description: Formats a date value in a specified format.\par
+SQL Query:\par
+SELECT FORMAT(GETDATE(), 'hh:mm:ss tt') AS FormattedTime;\par
+\par
+EOMONTH:\par
+Description: Returns the last day of the month.\par
+SQL Query:\par
+SELECT EOMONTH('2022-05-15') AS LastDayOfMonth;\par
+\par
+\par
+\b\fs28 Advanced Functions:\par
+\b0\fs24 CASE:\par
+Description: Evaluates a set of conditions and returns a result.\par
+SQL Query:\par
+SELECT\par
+  book_id,\par
+  CASE\par
+    WHEN avalable_copies > 50 THEN 'High Availability'\par
+    WHEN avalable_copies > 20 THEN 'Moderate Availability'\par
+    ELSE 'Low Availability'\par
+  END AS AvailabilityStatus\par
+FROM book;\par
+\par
+COALESCE:\par
+Description: Returns the first non-null expression in a list.\par
+SQL Query:\par
+SELECT\par
+  book_id,\par
+  COALESCE(avalable_copies, 0) AS ActualCopies\par
+FROM book;\par
+NULLIF:\par
+Description: Returns null if two expressions are equal; otherwise, it returns the first expression.\par
+SQL Query:\par
+SELECT\par
+  NULLIF(avalable_copies, 0) AS NonZeroCopies\par
+FROM book;\par
+\par
+IIF (Inline IF):\par
+Description: Returns one of two values depending on the evaluation of a condition.\par
+SQL Query:\par
+SELECT\par
+  loan_id,\par
+  IIF(returned = 1, 'Returned', 'Not Returned') AS ReturnStatus\par
+FROM loan;\par
+\par
+CHOOSE:\par
+Description: Returns the item at the specified index from a list of values.\par
+SQL Query:\par
+SELECT\par
+  loan_id,\par
+  CHOOSE(returned + 1, 'Not Returned', 'Returned') AS ReturnStatus\par
+FROM loan;\par
+\par
+\par
+\par
+\par
+\b\fs28 Function queries:\par
+\b0\fs24\par
+\b String functions for Inventory Management:\lang16393\par
+\b0\lang9\par
+-- Retrieve product names with their lengths:\par
+SELECT name AS ProductName, LEN(name) AS NameLength\par
+FROM product;\par
+\par
+-- Display product names in uppercase:\par
+SELECT name AS OriginalName, UPPER(name) AS UppercaseName\par
+FROM product;\par
+-- concate name and mobile number\par
+SELECT CONCAT(name , '-', mobile) from customer\par
+\par
+-- Math function queries\par
+\par
+-- Show product prices rounded to two decimal places:\par
+SELECT name AS ProductName, ROUND(selling_price, 2) AS RoundedSellingPrice\par
+FROM product;\par
+\par
+\par
+-- Calculate the total value of stock for each product:\par
+SELECT name AS ProductName, stock, buying_price * stock AS TotalStockValue\par
+FROM product;\par
+\par
+-- Generate a random discount percentage for each product:\par
+SELECT name AS ProductName, RAND() * 10 AS RandomDiscountPercentage\par
+FROM product;\par
+\par
+---date functions queries\par
+\par
+-- Retrieve order dates and the day of the week:\par
+SELECT id AS OrderID, date AS OrderDate, DATENAME(WEEKDAY, date) AS DayOfWeek\par
+FROM orders;\par
+\par
+-- Calculate the difference in days between order date and today:\par
+SELECT id AS OrderID, DATEDIFF(DAY, date, GETDATE()) AS DaysAgo\par
+FROM orders;\par
+\par
+-- Retrieve orders placed in the current year:\par
+SELECT id AS OrderID, date\par
+FROM orders\par
+WHERE YEAR(date) = YEAR(GETDATE());\par
+\par
+--advanced function queries\par
+\par
+-- Use CASE to categorize products based on stock levels:\par
+SELECT name AS ProductName,\par
+       stock,\par
+       CASE\par
+         WHEN stock > 50 THEN 'High Stock'\par
+         WHEN stock > 20 THEN 'Moderate Stock'\par
+         ELSE 'Low Stock'\par
+       END AS StockCategory\par
+FROM product;\par
+-- Use IIF to classify orders as large or small based on total amount:\par
+SELECT id AS OrderID, IIF(total_amount > 1000, 'Large Order', 'Small Order') AS OrderSize\par
+FROM orders;\par
+-- Use COALESCE to handle null values in order quantities:\par
+SELECT id AS OrderID, COALESCE(quantity, 0) AS ActualQuantity\par
+FROM orders;\par
+\b\fs28\par
+For library management system:\par
+\par
+\b0\fs24 --string functions for library\par
+\par
+-- Retrieve book titles with their lengths:\par
+SELECT title AS BookTitle, LEN(title) AS TitleLength\par
+FROM book;\par
+-- Display book titles in uppercase:\par
+SELECT title AS OriginalTitle, UPPER(title) AS UppercaseTitle\par
+FROM book;\par
+-- Concatenate book titles and genres:\par
+SELECT title, genre, CONCAT(title, ' - Genre: ', genre) AS BookWithGenre\par
+FROM book;\par
+\par
+--math functions queries \par
+-- Calculate the total value of books in the library using available copies:\par
+SELECT title AS BookTitle, avalable_copies, avalable_copies * 10 AS TotalBookValue\par
+FROM book;\par
+\par
+-- Generate a random discount percentage for each book:\par
+SELECT title AS BookTitle, RAND() * 10 AS RandomDiscountPercentage\par
+FROM book;\par
+\par
+-- Generate a random discount percentage for each book based on published date:\par
+SELECT title AS BookTitle, RAND() * (YEAR(GETDATE()) - YEAR(published_date) + 1) AS RandomDiscountPercentage\par
+FROM book;\par
+\par
+--Date functions queries\par
+\par
+-- Retrieve loan dates and the day of the week:\par
+SELECT id AS LoanID, loan_date AS LoanDate, DATENAME(WEEKDAY, loan_date) AS DayOfWeek\par
+FROM loan;\par
+\par
+-- Calculate the difference in days between loan date and today:\par
+SELECT id AS LoanID, DATEDIFF(DAY, loan_date, GETDATE()) AS DaysAgo\par
+FROM loan;\par
+\par
+-- Display loans with formatted return dates:\par
+SELECT id AS LoanID, return_date, FORMAT(return_date, 'yyyy-MM-dd') AS FormattedReturnDate\par
+FROM loan;\par
+\par
+\par
+--advanced fun queries\par
+\par
+-- Use CASE to categorize books based on available copies:\par
+SELECT title AS BookTitle,\par
+       avalable_copies,\par
+       CASE\par
+         WHEN avalable_copies > 60 THEN 'High Availability'\par
+         WHEN avalable_copies > 30 THEN 'Moderate Availability'\par
+         ELSE 'Low Availability'\par
+       END AS AvailabilityStatus\par
+FROM book;\par
+\par
+--handle null values in returned col\par
+SELECT id AS LoanID, COALESCE(returned, 0) AS returned\par
+FROM loan;\par
+\par
+-- Use IIF to classify loans as overdue or not based on return dates:\par
+SELECT id AS LoanID, IIF(return_date < GETDATE(), 'Overdue', 'Not Overdue') AS LoanStatus\par
+FROM loan;\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\par
+\par
+\fs28\par
+\ul\b For Social Media function queries:\par
+\par
+\ulnone\b0 --\b String  function Queries \b0\par
+\fs24 -- Query using CONCAT() and UPPER():\par
+SELECT\par
+    CONCAT('Post Content: ', Post.Content) AS PostDescription,\par
+    UPPER([User].FirstName) AS UppercaseFirstName\par
+FROM\par
+    Post\par
+INNER JOIN\par
+    [User] ON Post.UserID = [User].UserID;\par
+\par
+-- Query using LEFT() and LEN():\par
+SELECT\par
+    LEFT(CAST(Post.Content AS varchar(max)), 50) AS ShortPostContent,\par
+    LEN([User].LastName) AS LastNameLength\par
+FROM\par
+    Post\par
+INNER JOIN\par
+    [User] ON Post.UserID = [User].UserID;\par
+\par
+--Query using REPLACE() and TRIM():\par
+SELECT\par
+    REPLACE(CAST(Post.Content AS varchar(max)), ' ', '_') AS ReplacedPostContent,\par
+    TRIM([User].FirstName) AS TrimmedFirstName\par
+FROM\par
+    Post\par
+INNER JOIN\par
+    [User] ON Post.UserID = [User].UserID;\par
+\par
+\b\fs28     --Math/Numeric functions  queries\par
+\b0\fs24\par
+-- Query using ROUND() and POWER():\par
+SELECT\par
+    Post.Content,\par
+    ROUND(Post.LikesCount / 2.0, 2) AS RoundedLikes\par
+FROM\par
+    Post;\par
+\par
+-- Query using ABS() and RAND():\par
+\tab SELECT\par
+    Post.Content,\par
+    RAND() AS RandomValue\par
+FROM\par
+    Post;\par
+\par
+-- Query using CEILING() and FLOOR():\par
+SELECT\par
+    Post.Content,\par
+    CEILING(Post.LikesCount / 1000.0) AS ThousandLikesCeiled,\par
+    FLOOR(Post.CommentsCount / 50.0) AS FiftyCommentsFloored\par
+FROM\par
+    Post;\par
+\par
+\b\fs28 --Date functions  queries\b0\fs24\par
+\par
+-- Query using GETDATE() and DATEADD():\par
+SELECT\par
+    CommentID,\par
+    GETDATE() AS CurrentDateTime,\par
+    DATEADD(MINUTE, 30, CommentDate) AS CommentDateAfter30Minutes\par
+FROM\par
+    Comment;\par
+--   Query using MONTH() and FORMAT():\par
+SELECT\par
+    Post.Content,\par
+    MONTH(Post.PostDate) AS PostMonth,\par
+    FORMAT(Post.PostDate, 'yyyy-MM-dd') AS FormattedPostDate\par
+FROM\par
+    Post;\par
+--   Query using DATEDIFF() and EOMONTH():\par
+SELECT\par
+    Comment.CommentText,\par
+    DATEDIFF(DAY, Comment.CommentDate, GETDATE()) AS DaysSinceComment,\par
+    EOMONTH(Comment.CommentDate) AS EndOfMonth\par
+FROM\par
+    Comment;\par
+\par
+\b\fs28 --Advanced functions  queries\b0\fs24\par
+\par
+--   Query using ROW_NUMBER() and LAG(): error in running\par
+\par
+WITH OrderedComments AS (\par
+    SELECT\par
+        CommentID,\par
+        Content,\par
+        ROW_NUMBER() OVER (ORDER BY CommentDate DESC) AS RowNum,\par
+        LAG(Content) OVER (ORDER BY CommentDate DESC) AS PreviousContent\par
+    FROM\par
+        Comment\par
+)\par
+SELECT\par
+    CommentID,\par
+    Content,\par
+    RowNum,\par
+    PreviousContent\par
+FROM\par
+    OrderedComments\par
+WHERE\par
+    RowNum <= 5;\par
+\par
+--   Query using CTE (Common Table Expression) and FORMAT():\par
+\par
+WITH FormattedPosts AS (\par
+    SELECT\par
+        PostID,\par
+        FORMAT(PostDate, 'yyyy-MM-dd HH:mm:ss') AS FormattedPostDate\par
+    FROM\par
+        Post\par
+)\par
+SELECT\par
+    PostID,\par
+    FormattedPostDate\par
+FROM\par
+    FormattedPosts;\par
+\par
+--   Query using SUM() and PARTITION BY:\par
+\par
+SELECT\par
+    [User].FirstName,\par
+    Post.Content,\par
+    Post.LikesCount,\par
+    SUM(Post.LikesCount) OVER (PARTITION BY [User].UserID) AS UserTotalLikes\par
+FROM\par
+    Post\par
+INNER JOIN\par
+    [User] ON Post.UserID = [User].UserID;\fs28\par
+\fs24\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\qc\b\fs36\par
+}
+ 
