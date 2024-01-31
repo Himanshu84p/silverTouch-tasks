@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  color: #272640;
+  text-align: center;
+}
+.backgroundImage {
+  background: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.main {
+  min-height: 100vh;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.registrationForm {
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  background-color: #dfe7fd;
+  text-align: left;
+  border-radius: 1rem;
+}
+
+.submitButton {
+  margin: 1rem auto;
+  width: auto;
+}
+
+@media only screen and (max-width: 500px) {
+  .registrationForm {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .main {
+    padding: 2rem 0.8rem;
+  }
+}
