@@ -1,0 +1,11 @@
+﻿
+
+.server-controls {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.formContainer {
+    background-color:antiquewhite;
+}
+

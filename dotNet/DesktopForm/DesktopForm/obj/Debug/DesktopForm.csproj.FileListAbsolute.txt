@@ -1,0 +1,10 @@
+D:\dotNet\DesktopForm\DesktopForm\bin\Debug\DesktopForm.exe.config
+D:\dotNet\DesktopForm\DesktopForm\bin\Debug\DesktopForm.exe
+D:\dotNet\DesktopForm\DesktopForm\bin\Debug\DesktopForm.pdb
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.csproj.AssemblyReference.cache
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.Form1.resources
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.Properties.Resources.resources
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.csproj.GenerateResource.cache
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.csproj.CoreCompileInputs.cache
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.exe
+D:\dotNet\DesktopForm\DesktopForm\obj\Debug\DesktopForm.pdb

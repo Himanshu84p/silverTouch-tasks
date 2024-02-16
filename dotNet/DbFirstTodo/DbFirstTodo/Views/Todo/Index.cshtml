@@ -1,0 +1,91 @@
+﻿@using DbFirstTodo.Helpers;
+@model IEnumerable<DbFirstTodo.Models.TodoItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@Html.Raw(TempData["Warning"])
+@Html.Raw(TempData["DuplicateError"])
+@Html.DisplayTempData("InsertMessage", "Todo inserted Successfully", "green")
+@Html.DisplayTempData("DeletedMessage", "Todo Deleted successfully!!", "green")
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="container mt-4 custom-body">
+    <div class="row title-row">
+        <div class="col-8">
+            <h2>To-Do List</h2>
+        </div>
+        <div class="col-4 text-right">
+            @Html.ActionLink("Add Task", "Add", null, new { @class = "btn btn-success" })
+        </div>
+    </div>
+
+    <table class="table mt-3">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col" class="centered">Status</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                @Html.Partial("PartialListView", item)
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('.complete-checkbox').each(function () {
+                var checkbox = $(this);
+                var isCompleted = $(this).prop('checked');
+                var taskElement = $(this).closest('.table-row').find('.task-name');
+                taskElement.toggleClass('completed', isCompleted);
+
+                checkbox.data('modified', false);
+                if (isCompleted) {
+                    checkbox.prop('disabled', true);
+                }
+            });
+
+            $('.complete-checkbox').change(function () {
+                var checkbox = $(this);
+
+                if (!checkbox.data('modified') && !checkbox.prop('disabled')) {
+
+                    var taskId = checkbox.data('task-id');
+                    var isCompleted = checkbox.prop('checked');
+
+                    $.ajax({
+                        url: '/Todo/Complete/' + taskId + '/' + isCompleted,
+                        type: 'POST',
+                        success: function () {
+                            // Toggle line-through style
+                            var taskElement = checkbox.closest('.table-row').find('.task-name');
+                            taskElement.toggleClass('completed', isCompleted);
+
+                            // Set flag to indicate that the checkbox has been modified
+                            checkbox.data('modified', true);
+
+                            if (isCompleted) {
+                                checkbox.prop('disabled', true);
+                            }
+
+                        },
+                        error: function () {
+                            alert('Error occurred while marking task as complete.');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
+
+
+

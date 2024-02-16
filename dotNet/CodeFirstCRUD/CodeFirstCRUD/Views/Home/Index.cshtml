@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "CRUD Home";
+}
+
+<main>
+    <section class="row mb-3" aria-labelledby="aspnetTitle">
+        <h1 id="title">CRUD form with code first</h1>
+        
+        
+    </section>
+
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Book</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    @Html.ActionLink("Book", "Index", "Book", new { area = "" }, new { @class = "nav-link btn btn-outline-secondary" })
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Member</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    @Html.ActionLink("Member", "Index", "Member", new { area = "" }, new { @class = "nav-link btn btn-outline-secondary" })
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Publisher</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    @Html.ActionLink("Publisher", "Index", "Publisher", new { area = "" }, new { @class = "nav-link btn btn-outline-secondary" })
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

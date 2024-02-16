@@ -1,0 +1,18 @@
+﻿namespace CodeFirstCRUD.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class InitialModel2 : DbMigration
+    {
+        public override void Up()
+        {
+            AlterColumn("dbo.Members", "Gender", c => c.String(nullable: false));
+        }
+        
+        public override void Down()
+        {
+            AlterColumn("dbo.Members", "Gender", c => c.Boolean(nullable: false));
+        }
+    }
+}

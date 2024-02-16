@@ -1,0 +1,97 @@
+﻿@model WebAppMVC.Models.Student
+
+@{
+    ViewBag.Title = "Student";
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <h2>@ViewBag.Title</h2>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                </tr>
+                @for (int i = 0; i < 5; i++)
+                {
+                    <tr>
+                        <td>
+                            @i
+                        </td>
+                        <td>
+                            @Model.Name
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        @helper PrintList(string[] str)
+        {
+            <ul>
+                @foreach (string item in str)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+    </div>
+    <div>
+
+        <h3>Using the printlist helper </h3>
+
+        @PrintList(new string[] { "Coffee", "Tea", "Sugar", "Milk" })
+
+
+        @*Standard HTML helpers*@
+        @*first parameter is text of actionlink, second is name of view if parent is same, third is for parameter pass if any *@
+        @Html.ActionLink("About Page of student", "About")
+        <br />
+        @Html.ActionLink("Contact Page of Home", "Contact", "Home")
+
+        <br />
+        @*first para is given to name and id if other para is not given*@
+        @Html.TextBox("TextBox1", "Himanshu", new { id = "CustomID", @class = "CustomClass" })
+        <br />
+        @Html.CheckBox("Chx", true)
+        <br />
+
+
+
+
+    </div>
+    @*Strongly typed html helpers*@
+
+    <h3>Strongly typed html helpers</h3>
+    <div>
+        @using (Html.BeginForm())
+            {
+
+            }
+        @Html.LabelFor(x => x.Id)
+        <br />
+        @Html.TextBoxFor(X => X.Name)
+        <br />
+        @Html.TextBoxFor(X => X.Address)
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.csproj.AssemblyReference.cache
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.Form1.resources
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.Properties.Resources.resources
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.csproj.GenerateResource.cache
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.csproj.CoreCompileInputs.cache
+D:\dotNet\CalculatorTask\CalculatorTask\bin\Debug\CalculatorTask.exe.config
+D:\dotNet\CalculatorTask\CalculatorTask\bin\Debug\CalculatorTask.exe
+D:\dotNet\CalculatorTask\CalculatorTask\bin\Debug\CalculatorTask.pdb
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.exe
+D:\dotNet\CalculatorTask\CalculatorTask\obj\Debug\CalculatorTask.pdb

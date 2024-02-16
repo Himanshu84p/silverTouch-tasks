@@ -1,0 +1,19 @@
+﻿@model DbFirstTodo.Models.TodoItem
+<tr class="table-row border-secondary">
+    <td class="task-name">
+        @Html.DisplayFor(modelItem => @Model.Task)
+    </td>
+    <td class="centered">
+        <input type="checkbox" class="complete-checkbox" data-task-id="@Model.Id" @(Model.IsCompleted ? "checked" : "") />
+    </td>
+    <td class="right">
+        @using (Html.BeginForm("Delete", "Todo", FormMethod.Post))
+        {
+            @Html.Hidden("id", Model.Id)
+            <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+        }
+
+
+    </td>
+</tr>
+
