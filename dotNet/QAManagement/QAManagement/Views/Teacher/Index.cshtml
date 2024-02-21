@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-admin {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.3s;
+    }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+</style>
+
+<div class="container-admin">
+    <h2>@Session["Username"], <br />Welcome to QA Management System</h2>
+    <div>
+        <a href="@Url.Action("QuestionPapers", "Teacher")" class="btn">Question Papers</a>
+        <a href="@Url.Action("Create", "Teacher")" class="btn">Create Question Paper</a>
+    </div>
+</div>
+

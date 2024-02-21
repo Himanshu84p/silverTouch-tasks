@@ -1,0 +1,43 @@
+﻿@model List<QAManagement.Models.Question>
+
+@{
+    ViewBag.Title = "Attempt Question Paper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.QuestionPaper.Title</h2>
+
+@using (Html.BeginForm("Submit", "Student", new { questionPaperID = ViewBag.QuestionPaperID }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card-deck">
+        @foreach (var question in Model)
+        {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@question.QuestionText</h5>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer_@question.QuestionID" value="@question.Option1" required>
+                            <label class="form-check-label">@question.Option1</label>
+                        </div>
+                        <div class="form-check"> 
+                            <input class="form-check-input" type="radio" name="answer_@question.QuestionID" value="@question.Option2" required>
+                            <label class="form-check-label">@question.Option2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer_@question.QuestionID" value="@question.Option3" required>
+                            <label class="form-check-label">@question.Option3</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer_@question.QuestionID" value="@question.Option4" required>
+                            <label class="form-check-label">@question.Option4</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

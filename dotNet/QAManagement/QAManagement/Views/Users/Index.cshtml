@@ -1,0 +1,82 @@
+﻿@model IEnumerable<QAManagement.Models.User>
+
+@{
+    ViewBag.Title = "User Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Custom styles for the table */
+    .table-container {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+        border-radius: 8px; /* Add border radius */
+        overflow: hidden; /* Ensure overflow is hidden */
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .table td {
+            background-color: #fff;
+            color: #495057;
+        }
+
+    .btn-group {
+        margin: 0;
+    }
+
+    .btn {
+        margin-right: 8px;
+    }
+</style>
+
+<div class="container py-4">
+    <h2 class="mb-4">User Management</h2>
+    <p>
+        @Html.ActionLink("Create New User", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Username</td>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="@Url.Action("Edit", new { id = user.UserID })" class="btn btn-sm btn-info">Edit</a>
+                                <a href="@Url.Action("Details", new { id = user.UserID })" class="btn btn-sm btn-secondary">Details</a>
+                                <a href="@Url.Action("Delete", new { id = user.UserID })" class="btn btn-sm btn-danger">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

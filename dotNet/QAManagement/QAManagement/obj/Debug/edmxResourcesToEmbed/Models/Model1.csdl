@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QAManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="QuestionPapers" Relationship="QAManagementModel.FK__QuestionP__Creat__3E52440B" FromRole="User" ToRole="QuestionPaper" />
+    <NavigationProperty Name="Answers" Relationship="QAManagementModel.FK__Answers__UserID__4AB81AF0" FromRole="User" ToRole="Answer" />
+    <NavigationProperty Name="Approvals" Relationship="QAManagementModel.FK__Approvals__Appro__5070F446" FromRole="User" ToRole="Approval" />
+  </EntityType>
+  <EntityContainer Name="QAManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="QuestionPapers" EntityType="QAManagementModel.QuestionPaper" />
+    <EntitySet Name="Questions" EntityType="QAManagementModel.Question" />
+    <AssociationSet Name="FK__QuestionP__Creat__3E52440B" Association="QAManagementModel.FK__QuestionP__Creat__3E52440B">
+      <End Role="User" EntitySet="Users" />
+      <End Role="QuestionPaper" EntitySet="QuestionPapers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Questions__Quest__412EB0B6" Association="QAManagementModel.FK__Questions__Quest__412EB0B6">
+      <End Role="QuestionPaper" EntitySet="QuestionPapers" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <EntitySet Name="Answers" EntityType="QAManagementModel.Answer" />
+    <AssociationSet Name="FK__Answers__Questio__4BAC3F29" Association="QAManagementModel.FK__Answers__Questio__4BAC3F29">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Answers__UserID__4AB81AF0" Association="QAManagementModel.FK__Answers__UserID__4AB81AF0">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <EntitySet Name="Approvals" EntityType="QAManagementModel.Approval" />
+    <AssociationSet Name="FK__Approvals__Appro__5070F446" Association="QAManagementModel.FK__Approvals__Appro__5070F446">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Approval" EntitySet="Approvals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Approvals__Quest__4F7CD00D" Association="QAManagementModel.FK__Approvals__Quest__4F7CD00D">
+      <End Role="QuestionPaper" EntitySet="QuestionPapers" />
+      <End Role="Approval" EntitySet="Approvals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Answers__Questio__5165187F" Association="QAManagementModel.FK__Answers__Questio__5165187F">
+      <End Role="QuestionPaper" EntitySet="QuestionPapers" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="QuestionPaper">
+    <Key>
+      <PropertyRef Name="QuestionPaperID" />
+    </Key>
+    <Property Name="QuestionPaperID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="QAManagementModel.FK__QuestionP__Creat__3E52440B" FromRole="QuestionPaper" ToRole="User" />
+    <NavigationProperty Name="Questions" Relationship="QAManagementModel.FK__Questions__Quest__412EB0B6" FromRole="QuestionPaper" ToRole="Question" />
+    <NavigationProperty Name="Approvals" Relationship="QAManagementModel.FK__Approvals__Quest__4F7CD00D" FromRole="QuestionPaper" ToRole="Approval" />
+    <NavigationProperty Name="Answers" Relationship="QAManagementModel.FK__Answers__Questio__5165187F" FromRole="QuestionPaper" ToRole="Answer" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Option1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Option2" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Option3" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Option4" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CorrectAnswer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QuestionPaperID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="QuestionPaper" Relationship="QAManagementModel.FK__Questions__Quest__412EB0B6" FromRole="Question" ToRole="QuestionPaper" />
+    <NavigationProperty Name="Answers" Relationship="QAManagementModel.FK__Answers__Questio__4BAC3F29" FromRole="Question" ToRole="Answer" />
+  </EntityType>
+  <Association Name="FK__QuestionP__Creat__3E52440B">
+    <End Type="QAManagementModel.User" Role="User" Multiplicity="1" />
+    <End Type="QAManagementModel.QuestionPaper" Role="QuestionPaper" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="QuestionPaper">
+        <PropertyRef Name="CreatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Questions__Quest__412EB0B6">
+    <End Type="QAManagementModel.QuestionPaper" Role="QuestionPaper" Multiplicity="1" />
+    <End Type="QAManagementModel.Question" Role="Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionPaper">
+        <PropertyRef Name="QuestionPaperID" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="QuestionPaperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="SubmittedAnswer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubmissionTimestamp" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Question" Relationship="QAManagementModel.FK__Answers__Questio__4BAC3F29" FromRole="Answer" ToRole="Question" />
+    <NavigationProperty Name="User" Relationship="QAManagementModel.FK__Answers__UserID__4AB81AF0" FromRole="Answer" ToRole="User" />
+    <Property Name="QuestionPaperID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="QuestionPaper" Relationship="QAManagementModel.FK__Answers__Questio__5165187F" FromRole="Answer" ToRole="QuestionPaper" />
+  </EntityType>
+  <Association Name="FK__Answers__Questio__4BAC3F29">
+    <End Type="QAManagementModel.Question" Role="Question" Multiplicity="1" />
+    <End Type="QAManagementModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Answers__UserID__4AB81AF0">
+    <End Type="QAManagementModel.User" Role="User" Multiplicity="1" />
+    <End Type="QAManagementModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Approval">
+    <Key>
+      <PropertyRef Name="ApprovalID" />
+    </Key>
+    <Property Name="ApprovalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionPaperID" Type="Int32" Nullable="false" />
+    <Property Name="ApproverID" Type="Int32" Nullable="false" />
+    <Property Name="ApprovalStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalTimestamp" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="User" Relationship="QAManagementModel.FK__Approvals__Appro__5070F446" FromRole="Approval" ToRole="User" />
+    <NavigationProperty Name="QuestionPaper" Relationship="QAManagementModel.FK__Approvals__Quest__4F7CD00D" FromRole="Approval" ToRole="QuestionPaper" />
+  </EntityType>
+  <Association Name="FK__Approvals__Appro__5070F446">
+    <End Type="QAManagementModel.User" Role="User" Multiplicity="1" />
+    <End Type="QAManagementModel.Approval" Role="Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Approval">
+        <PropertyRef Name="ApproverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Approvals__Quest__4F7CD00D">
+    <End Type="QAManagementModel.QuestionPaper" Role="QuestionPaper" Multiplicity="1" />
+    <End Type="QAManagementModel.Approval" Role="Approval" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionPaper">
+        <PropertyRef Name="QuestionPaperID" />
+      </Principal>
+      <Dependent Role="Approval">
+        <PropertyRef Name="QuestionPaperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Answers__Questio__5165187F">
+    <End Type="QAManagementModel.QuestionPaper" Role="QuestionPaper" Multiplicity="1" />
+    <End Type="QAManagementModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionPaper">
+        <PropertyRef Name="QuestionPaperID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionPaperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

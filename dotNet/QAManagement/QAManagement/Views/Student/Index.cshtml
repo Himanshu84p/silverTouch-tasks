@@ -1,0 +1,36 @@
+﻿@model List<QAManagement.QuestionPaperViewModel>
+
+@{
+    ViewBag.Title = "Approved Question Papers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Approved Question Papers</h2>
+
+<div class="row">
+    @foreach (var viewModel in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@viewModel.QuestionPaper.Title</h5>
+                    <p class="card-text">@viewModel.QuestionPaper.Description</p>
+                    <p class="card-text">Creation Date: @viewModel.QuestionPaper.CreationDate.ToShortDateString()</p>
+                    @if (viewModel.IsAttempted)
+                    {
+                        <button class="btn btn-primary" disabled>Attempt (Already Attempted)</button>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Attempt", "Student", new { id = viewModel.QuestionPaper.QuestionPaperID })" class="btn btn-primary">Attempt</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <p>No approved question papers available.</p>
+}

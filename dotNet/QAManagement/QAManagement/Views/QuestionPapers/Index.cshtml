@@ -1,0 +1,172 @@
+﻿@model IEnumerable<QAManagement.Models.QuestionPaper>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User.Username)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Username)
+            </td>
+            <td>
+                @Html.ActionLink("Add New Question", "Create", "Questions", new { id=item.QuestionPaperID }, null)
+                @Html.ActionLink("Edit", "Edit", new { id=item.QuestionPaperID })
+                @Html.ActionLink("Details", "Details", new { id=item.QuestionPaperID })
+                @Html.ActionLink("Delete", "Delete", new { id=item.QuestionPaperID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+
+
+
+
+<h2>All Question Papers</h2>
+
+<p>
+    @Html.ActionLink("Create New Paper", "Create", null, new { @class = "btn btn-secondary" })
+</p>
+
+<div class="card-container">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="status @item.Status">@Html.DisplayFor(modelItem => item.Status)</div>
+            <h3 class="title">@Html.DisplayFor(modelItem => item.Title)</h3>
+            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+            <p><strong>Creation Date:</strong> @Html.DisplayFor(modelItem => item.CreationDate)</p>
+            <p><strong>Created By:</strong> @Html.DisplayFor(modelItem => item.User.Username)</p>
+            <div class="button-group">
+                @if (item.Status == "Approved")
+                {
+                    @Html.ActionLink("Add New Question", "Create", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-primary disabled" })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.QuestionPaperID }, new { @class = "btn btn-warning disabled" })
+                    @Html.ActionLink("View Question Paper", "Details", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("View Questions", "Index", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("Delete Paper", "Delete", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-danger" })
+                    @Html.ActionLink("Send for Approval", "SendForApproval", "Teacher", new { id = item.QuestionPaperID }, new { @class = "btn btn-success disabled" })
+                }
+                else
+                {
+                    @Html.ActionLink("Add New Question", "Create", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-primary" })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-warning" })
+                    @Html.ActionLink("View Question Paper", "Details", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("View Questions", "Index", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("Delete Paper", "Delete", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-danger" })
+                    @Html.ActionLink("Send for Approval", "SendForApproval","Teacher", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-success" })
+                }
+
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        width: 600px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative; /* Make the card container for absolute positioning */
+    }
+
+    .status {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .Approved {
+        background-color: #4a9438;
+    }
+
+    .Pending {
+        background-color : #f3e06d;
+        color : #000;
+    }
+
+    .Rejected {
+        background-color: #ff1c1c;
+    }
+
+    .title {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .card p {
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .button-group {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+        .button-group a {
+            margin-right: 10px;
+        }
+
+    .btn {
+        padding: 8px 20px;
+        font-size: 16px;
+        margin : 10px 6px;
+    }
+</style>
+
