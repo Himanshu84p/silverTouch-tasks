@@ -14,3 +14,5 @@ Basic Steps to run the program:
 	public string Email { get; set; }
 6). after that you can run the Project named Question Villa.
 7). after Role based sign in you can navigate home page via home button in the navbar. 
+8). Admin Credentials : Email : admin@gmail.com
+			password: Admin
