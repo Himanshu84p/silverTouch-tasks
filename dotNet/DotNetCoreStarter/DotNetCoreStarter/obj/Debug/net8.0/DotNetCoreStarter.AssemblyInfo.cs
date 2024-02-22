@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DotNetCoreStarter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e5835c1b7793f2b5962f065693f0cab89cef1db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92c3c5556a66b7fcc8dd8dd751de6fd93bbaf3de")]
 [assembly: System.Reflection.AssemblyProductAttribute("DotNetCoreStarter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DotNetCoreStarter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

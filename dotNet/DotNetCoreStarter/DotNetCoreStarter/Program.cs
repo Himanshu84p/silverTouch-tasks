@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container. without this line view will not reflect to the browser.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -16,8 +16,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// app.MapDefaultControllerRoute(); // this line run the default route if we don't specify 
+
+//this is for custom routing
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Privacy}/{id?}");
 
 app.Run();

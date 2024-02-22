@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\RepsitoryPattern_DotNetCore.props" />
+</Project>

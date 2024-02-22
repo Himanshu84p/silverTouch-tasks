@@ -1,0 +1,38 @@
+﻿@model RepsitoryPattern_DotNetCore.DataAccess.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Delete</h1>
+
+    <div class="card shadow">
+        <div class="card-body">
+            <h3 class="card-title">Are you sure you want to delete this?</h3>
+            <div class="card-text">
+                <h4>Employee</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">First Name</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.FirstName)</dd>
+                    <dt class="col-sm-2">Last Name</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.LastName)</dd>
+                    <dt class="col-sm-2">Job Title</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.JobTitle)</dd>
+                    <dt class="col-sm-2">Department</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Department)</dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger mr-2">Delete</button>
+                        <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RepsitoryPattern_DotNetCore.props" />
+</Project>
