@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Edit User";
+}
+
+@using Newtonsoft.Json;
+
+@{
+    dynamic user = JsonConvert.DeserializeObject(Model);
+}
+
+<h1>Edit User</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@ViewBag.UserId" />
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="@user.name" />
+    </div>
+    <div class="form-group">
+        <label for="Name">Email</label>
+        <input type="text" class="form-control" id="email" name="email" value="@user.email" />
+    </div>
+    <div class="form-group">
+        <label for="Name">Age</label>
+        <input type="text" class="form-control" id="age" name="age" value="@user.age" />
+    </div>
+    <div class="form-group">
+        <label for="Name">Address</label>
+        <input type="text" class="form-control" id="address" name="address" value="@user.address" />
+    </div>
+    <div class="form-group">
+        <label for="Name">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="@user.phone" />
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" name="gender">
+            <option value="Male" selected="@(user.gender == "Male")">Male</option>
+            <option value="Female" selected="@(user.gender == "Female")">Female</option>
+            <option value="Other" selected="@(user.gender == "Other")">Other</option>
+        </select>
+    </div>
+    <!-- Add other fields as needed -->
+    <button type="submit" class="btn btn-primary mb-3 mt-3">Save</button>
+    <a href="@Url.Action("Index", "UserController1")" class="btn btn-secondary mb-3 mt-3">Cancel</a>
+</form>

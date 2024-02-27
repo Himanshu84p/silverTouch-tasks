@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>API Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .data-item {
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+            .data-item h2 {
+                margin-top: 0;
+                color: #007bff;
+            }
+
+            .data-item p {
+                margin: 5px 0;
+            }
+
+        .btn {
+            padding: 8px 16px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn.edit {
+                background-color: #28a745;
+            }
+
+            .btn.delete {
+                background-color: #dc3545;
+            }
+
+            .btn.view {
+                background-color: #007bff;
+            }
+
+            .btn:hover {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+    </style>
+</head>
+<body>
+    <h1>Data from API</h1>
+    <a asp-controller="UserController1" asp-action="Create" class="btn btn-secondary mb-3 mt-3">Create New User</a>
+    <div id="data-container">
+        @if (!string.IsNullOrEmpty(Model))
+        {
+            try
+            {
+                dynamic jsonData = Newtonsoft.Json.JsonConvert.DeserializeObject(Model);
+                foreach (var item in jsonData)
+                {
+                    <div class="data-item">
+                        <h2>@item.Name</h2>
+                        <p><strong>Name:</strong> @item.name</p>
+                        <p><strong>Email:</strong> @item.email</p>
+                        <p><strong>Age:</strong> @item.age</p>
+                        <p><strong>Address:</strong> @item.address</p>
+                        <p><strong>Phone:</strong> @item.phone</p>
+                        <p><strong>Gender:</strong> @item.gender</p>
+                        @Html.ActionLink("Edit User", "Edit", new { id = item.id }, new { @class = "btn edit" })
+                        @Html.ActionLink("Delete User", "DeleteConfirm", new { id = item.id }, new { @class = "btn delete" })
+                        @Html.ActionLink("View User", "Details", new { id = item.id }, new { @class = "btn view" })
+                    </div>
+                }
+            }
+            catch (Exception ex)
+            {
+                <p>Error occurred while parsing JSON: @ex.Message</p>
+            }
+        }
+        else
+        {
+            <p>No data available</p>
+        }
+    </div>
+</body>
+</html>
