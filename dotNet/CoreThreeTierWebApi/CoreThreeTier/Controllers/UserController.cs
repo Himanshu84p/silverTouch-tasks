@@ -12,15 +12,18 @@ namespace CoreThreeTier.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserServices users;
+        private readonly ILogger<UserController> logger;
 
-        public UserController(IUserServices users)
+        public UserController(IUserServices users, ILogger<UserController> logger)
         {
             this.users = users;
+            this.logger = logger;
         }
 
         [HttpGet("GetAllUsers")]
         public async Task<IActionResult> GetUsers()
         {
+            logger.LogInformation("Gettting all users");
             var data = await users.GetUsers();
             return Ok(data);
         }
@@ -34,6 +37,7 @@ namespace CoreThreeTier.Controllers
             }
             else
             {
+                logger.LogInformation("Create new User");
                 var data = await users.AddUser(user);
                 return Ok(data);
             }
@@ -52,6 +56,7 @@ namespace CoreThreeTier.Controllers
 
             if (id == user.Id)
             {
+                logger.LogInformation("Update the User");
                 await users.UpdateUser(id, user);
                 return Ok(user);            }
             else
@@ -69,6 +74,7 @@ namespace CoreThreeTier.Controllers
             }
             else
             {
+                logger.LogInformation("delete new User");
                 var deletedUser = await users.DeleteUser(id);
                 return Ok(deletedUser);
             }

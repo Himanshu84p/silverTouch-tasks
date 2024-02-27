@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <History>True|2024-02-27T05:36:21.6797749Z;True|2024-02-27T11:01:55.7697347+05:30;True|2024-02-27T10:44:29.0318708+05:30;False|2024-02-27T10:43:26.4637017+05:30;False|2024-02-27T10:41:38.9157258+05:30;False|2024-02-27T10:40:46.1684246+05:30;False|2024-02-27T10:40:39.8093734+05:30;False|2024-02-27T10:39:44.8141376+05:30;False|2024-02-27T10:38:52.0462687+05:30;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>D:\HostApi</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

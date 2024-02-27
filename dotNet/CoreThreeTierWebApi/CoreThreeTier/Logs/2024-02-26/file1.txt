@@ -1,0 +1,136 @@
+2024-02-26 17:42:58.7670|DEBUG|Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory|Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+2024-02-26 17:42:59.1893|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting starting
+2024-02-26 17:42:59.4069|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5273
+2024-02-26 17:42:59.4069|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly CoreThreeTier
+2024-02-26 17:42:59.4483|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-02-26 17:42:59.4483|DEBUG|Microsoft.AspNetCore.Hosting.Diagnostics|Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-02-26 17:42:59.4543|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2024-02-26 17:42:59.4543|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2024-02-26 17:42:59.4543|INFO|Microsoft.Hosting.Lifetime|Content root path: D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier
+2024-02-26 17:42:59.4543|DEBUG|Microsoft.Extensions.Hosting.Internal.Host|Hosting started
+2024-02-26 17:42:59.5147|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN1MOH2VG4T2" received FIN.
+2024-02-26 17:42:59.5147|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T2" accepted.
+2024-02-26 17:42:59.5147|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T2" started.
+2024-02-26 17:42:59.5426|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets|Connection id "0HN1MOH2VG4T2" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-02-26 17:42:59.5459|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T2" disconnecting.
+2024-02-26 17:42:59.5459|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T2" stopped.
+2024-02-26 17:42:59.7033|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T3" accepted.
+2024-02-26 17:42:59.7033|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T3" started.
+2024-02-26 17:42:59.7690|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T4" accepted.
+2024-02-26 17:42:59.7690|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T4" started.
+2024-02-26 17:42:59.8031|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5273/swagger/index.html - - -
+2024-02-26 17:42:59.9863|DEBUG|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|Wildcard detected, all requests with hosts will be allowed.
+2024-02-26 17:42:59.9863|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed.
+2024-02-26 17:43:00.0166|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/index.html'
+2024-02-26 17:43:00.0166|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-02-26 17:43:00.1098|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup is scheduled to include browser refresh script injection.
+2024-02-26 17:43:00.1865|DEBUG|Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware|Response markup was updated to include browser refresh script injection.
+2024-02-26 17:43:00.1865|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T3" completed keep alive response.
+2024-02-26 17:43:00.1865|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5273/_framework/aspnetcore-browser-refresh.js - - -
+2024-02-26 17:43:00.2080|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T5" accepted.
+2024-02-26 17:43:00.2180|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5273/swagger/index.html - 200 - text/html;charset=utf-8 412.3825ms
+2024-02-26 17:43:00.2180|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T5" started.
+2024-02-26 17:43:00.2180|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T4" completed keep alive response.
+2024-02-26 17:43:00.2180|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5273/_vs/browserLink - - -
+2024-02-26 17:43:00.2180|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5273/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript;+charset=utf-8 27.6810ms
+2024-02-26 17:43:00.2683|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T5" completed keep alive response.
+2024-02-26 17:43:00.2683|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5273/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 45.6812ms
+2024-02-26 17:43:00.3752|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5273/swagger/v1/swagger.json - - -
+2024-02-26 17:43:00.3752|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed.
+2024-02-26 17:43:00.3752|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|No candidates found for the request path '/swagger/v1/swagger.json'
+2024-02-26 17:43:00.3752|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request did not match any endpoints
+2024-02-26 17:43:00.4925|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T5" completed keep alive response.
+2024-02-26 17:43:00.4925|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5273/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 122.2443ms
+2024-02-26 17:43:06.3210|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5273/api/User/GetAllUsers - - -
+2024-02-26 17:43:06.3210|TRACE|Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware|All hosts are allowed.
+2024-02-26 17:43:06.3375|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|1 candidate(s) found for the request path '/api/User/GetAllUsers'
+2024-02-26 17:43:06.3375|DEBUG|Microsoft.AspNetCore.Routing.Matching.DfaMatcher|Endpoint 'CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier)' with route pattern 'api/User/GetAllUsers' is valid for the request path '/api/User/GetAllUsers'
+2024-02-26 17:43:06.3375|DEBUG|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|Request matched endpoint 'CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier)'
+2024-02-26 17:43:06.3375|TRACE|Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware|The endpoint does not specify the IRequestSizeLimitMetadata.
+2024-02-26 17:43:06.3507|DEBUG|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Static files was skipped as the request already matched an endpoint.
+2024-02-26 17:43:06.3507|WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect.
+2024-02-26 17:43:06.3507|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier)'
+2024-02-26 17:43:06.3773|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller CoreThreeTier.Controllers.UserController (CoreThreeTier).
+2024-02-26 17:43:06.3773|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of authorization filters (in the following order): None
+2024-02-26 17:43:06.3833|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of resource filters (in the following order): None
+2024-02-26 17:43:06.3833|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000), Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)
+2024-02-26 17:43:06.3833|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of exception filters (in the following order): None
+2024-02-26 17:43:06.3833|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)
+2024-02-26 17:43:06.3833|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing controller factory for controller CoreThreeTier.Controllers.UserController (CoreThreeTier)
+2024-02-26 17:43:06.5288|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-02-26 17:43:06.5518|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed controller factory for controller CoreThreeTier.Controllers.UserController (CoreThreeTier)
+2024-02-26 17:43:06.5518|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2024-02-26 17:43:06.5518|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2024-02-26 17:43:06.5518|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2024-02-26 17:43:06.5518|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2024-02-26 17:43:06.5681|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executing action method CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier) - Validation state: Valid
+2024-02-26 17:43:06.5681|INFO|CoreThreeTier.Controllers.UserController|Gettting all users
+2024-02-26 17:43:07.0269|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 8.0.2 initialized 'CoreScaffoldDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.2' with options: None
+2024-02-26 17:43:07.0590|DEBUG|Microsoft.EntityFrameworkCore.Query|Compiling query expression: 
+'DbSet<User>()'
+2024-02-26 17:43:07.2123|DEBUG|Microsoft.EntityFrameworkCore.Query|Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Address (string) MaxLength(255), 1], [Property: User.Age (int?), 2], [Property: User.Email (string) MaxLength(100), 3], [Property: User.Gender (string) MaxLength(10), 4], [Property: User.Name (string) MaxLength(100), 5], [Property: User.Phone (string) MaxLength(15), 6] }
+        SELECT u.ID, u.Address, u.Age, u.Email, u.Gender, u.Name, u.Phone
+        FROM Users AS u), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    DataAccessLayer_DAL_.DataAccess.CoreScaffoldDbContext, 
+    False, 
+    False, 
+    True
+)'
+2024-02-26 17:43:07.2447|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Creating DbConnection.
+2024-02-26 17:43:07.2523|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Created DbConnection. (4ms).
+2024-02-26 17:43:07.2523|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opening connection to database 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS'.
+2024-02-26 17:43:07.2803|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Opened connection to database 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS'.
+2024-02-26 17:43:07.2862|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Creating DbCommand for 'ExecuteReader'.
+2024-02-26 17:43:07.2862|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Created DbCommand for 'ExecuteReader' (4ms).
+2024-02-26 17:43:07.2862|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Initialized DbCommand for 'ExecuteReader' (10ms).
+2024-02-26 17:43:07.3033|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Address], [u].[Age], [u].[Email], [u].[Gender], [u].[Name], [u].[Phone]
+FROM [Users] AS [u]
+2024-02-26 17:43:07.3279|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[ID], [u].[Address], [u].[Age], [u].[Email], [u].[Gender], [u].[Name], [u].[Phone]
+FROM [Users] AS [u]
+2024-02-26 17:43:07.3623|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.3918|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.3918|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.3918|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.3918|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.3918|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.4016|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.4016|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.4016|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.4016|DEBUG|Microsoft.EntityFrameworkCore.ChangeTracking|Context 'CoreScaffoldDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-02-26 17:43:07.4016|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|Closing data reader to 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS'.
+2024-02-26 17:43:07.4016|DEBUG|Microsoft.EntityFrameworkCore.Database.Command|A data reader for 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS' is being disposed after spending 81ms reading results.
+2024-02-26 17:43:07.4203|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closing connection to database 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS'.
+2024-02-26 17:43:07.4203|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Closed connection to database 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS' (2ms).
+2024-02-26 17:43:07.4203|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action method CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 855.2465ms.
+2024-02-26 17:43:07.4203|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2024-02-26 17:43:07.4333|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter.
+2024-02-26 17:43:07.4333|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: Before executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2024-02-26 17:43:07.4333|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Action Filter: After executing OnActionExecuted on filter Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter.
+2024-02-26 17:43:07.4333|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2024-02-26 17:43:07.4333|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuting on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2024-02-26 17:43:07.4333|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Before executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2024-02-26 17:43:07.4333|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|List of registered output formatters, in the following order: Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter, Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter
+2024-02-26 17:43:07.4516|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|No information found on request to perform content negotiation.
+2024-02-26 17:43:07.4516|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-02-26 17:43:07.4516|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Attempting to select the first formatter in the output formatters list which can write the result.
+2024-02-26 17:43:07.4516|DEBUG|Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector|Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2024-02-26 17:43:07.4516|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DataAccessLayer_DAL_.DataAccess.User, DataAccessLayer(DAL), Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-02-26 17:43:07.4730|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|After executing action result Microsoft.AspNetCore.Mvc.OkObjectResult.
+2024-02-26 17:43:07.4730|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: Before executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2024-02-26 17:43:07.4730|TRACE|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Result Filter: After executing OnResultExecuted on filter Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter.
+2024-02-26 17:43:07.4730|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier) in 1088.7435ms
+2024-02-26 17:43:07.4865|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'CoreThreeTier.Controllers.UserController.GetUsers (CoreThreeTier)'
+2024-02-26 17:43:07.4865|DEBUG|Microsoft.AspNetCore.Server.Kestrel.Connections|Connection id "0HN1MOH2VG4T5" completed keep alive response.
+2024-02-26 17:43:07.4865|DEBUG|Microsoft.EntityFrameworkCore.Infrastructure|'CoreScaffoldDbContext' disposed.
+2024-02-26 17:43:07.4865|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposing connection to database 'CoreScaffoldDB' on server 'DESKTOP-LI40AFI\SQLEXPRESS'.
+2024-02-26 17:43:07.5046|DEBUG|Microsoft.EntityFrameworkCore.Database.Connection|Disposed connection to database '' on server '' (4ms).
+2024-02-26 17:43:07.5046|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5273/api/User/GetAllUsers - 200 - application/json;+charset=utf-8 1186.7834ms

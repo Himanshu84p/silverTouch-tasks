@@ -280,3 +280,8 @@ D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\obj\Debug\net8
 D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\obj\Debug\net8.0\CoreThreeTier.pdb
 D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\obj\Debug\net8.0\CoreThreeTier.genruntimeconfig.cache
 D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\obj\Debug\net8.0\ref\CoreThreeTier.dll
+D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\bin\Debug\net8.0\nlog.config
+D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\bin\Debug\net8.0\NLog.dll
+D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\bin\Debug\net8.0\NLog.Database.dll
+D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+D:\All_Silvertouch_Tasks\dotNet\CoreThreeTierWebApi\CoreThreeTier\bin\Debug\net8.0\NLog.Web.AspNetCore.dll

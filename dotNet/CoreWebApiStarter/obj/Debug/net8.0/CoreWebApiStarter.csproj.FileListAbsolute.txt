@@ -129,9 +129,9 @@ D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\staticwebasse
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CoreWebApiStarter.props
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\staticwebassets.pack.json
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\scopedcss\bundle\CoreWebApiStarter.styles.css
-D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\CoreWebApiStarter.csproj.CopyComplete
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\CoreWebApiStarter.dll
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\refint\CoreWebApiStarter.dll
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\CoreWebApiStarter.pdb
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\CoreWebApiStarter.genruntimeconfig.cache
 D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\ref\CoreWebApiStarter.dll
+D:\All_Silvertouch_Tasks\dotNet\CoreWebApiStarter\obj\Debug\net8.0\CoreWebApiStarter.csproj.CopyComplete

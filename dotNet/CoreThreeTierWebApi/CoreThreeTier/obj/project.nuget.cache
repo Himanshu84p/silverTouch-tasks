@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8oR7u4nXIlgz8MqjVbJLiHISwjSS9a7hG7VqAEpcCrjbv8uW0jgVPJY0rchVHZMeevfFOVZHTnSQpKZqrhZpYQ==",
+  "dgSpecHash": "+bbNMJXJVS+abKF5lOphtjXx8tkGexdMKSvF6qMOAUTlkLVZGGflvaDGor9g6EXrSTFiM6HYVEdThh+/q04T1g==",
   "success": true,
   "projectFilePath": "D:\\All_Silvertouch_Tasks\\dotNet\\CoreThreeTierWebApi\\CoreThreeTier\\CoreThreeTier.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,10 @@
     "C:\\Users\\baps\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\baps\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\baps\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\baps\\.nuget\\packages\\nlog\\5.2.8\\nlog.5.2.8.nupkg.sha512",
+    "C:\\Users\\baps\\.nuget\\packages\\nlog.database\\5.2.8\\nlog.database.5.2.8.nupkg.sha512",
+    "C:\\Users\\baps\\.nuget\\packages\\nlog.extensions.logging\\5.3.8\\nlog.extensions.logging.5.3.8.nupkg.sha512",
+    "C:\\Users\\baps\\.nuget\\packages\\nlog.web.aspnetcore\\5.3.8\\nlog.web.aspnetcore.5.3.8.nupkg.sha512",
     "C:\\Users\\baps\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\baps\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\baps\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

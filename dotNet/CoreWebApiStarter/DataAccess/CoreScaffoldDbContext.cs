@@ -13,6 +13,8 @@ public partial class CoreScaffoldDbContext : DbContext
 
     public virtual DbSet<Employee> Employees { get; set; }
 
+    public virtual DbSet<Log> Logs { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,6 +42,20 @@ public partial class CoreScaffoldDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("lastName");
+        });
+
+        modelBuilder.Entity<Log>(entity =>
+        {
+            entity.HasKey(e => e.LogId).HasName("PK__log__7839F64D9CA86A03");
+
+            entity.ToTable("log");
+
+            entity.Property(e => e.LogId).HasColumnName("logId");
+            entity.Property(e => e.Callsite).HasMaxLength(255);
+            entity.Property(e => e.Level).HasMaxLength(50);
+            entity.Property(e => e.Logged).HasColumnType("datetime");
+            entity.Property(e => e.Logger).HasMaxLength(255);
+            entity.Property(e => e.MachineName).HasMaxLength(255);
         });
 
         modelBuilder.Entity<User>(entity =>
