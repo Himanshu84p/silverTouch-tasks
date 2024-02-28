@@ -1,0 +1,136 @@
+﻿
+
+
+
+<head>
+    <title>Customer's Data</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #555;
+            height : auto;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .data-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .data-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .data-item h2 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+        .btn {
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+            .btn:hover {
+                transform: scale(1.05);
+            }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                border-color: #c82333;
+            }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+            .btn-success:hover {
+                background-color: #218838;
+                border-color: #218838;
+            }
+
+        .create-btn {
+            margin-bottom: 40px;
+        }
+
+        .btn i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer's Data</h1>
+        <a asp-controller="Customer" asp-action="Create" class="btn btn-primary create-btn"><i class="fas fa-plus"></i>Create New Customer</a>
+        <div id="data-container">
+            @if (!string.IsNullOrEmpty(Model))
+            {
+                try
+                {
+                    dynamic jsonData = Newtonsoft.Json.JsonConvert.DeserializeObject(Model);
+                    foreach (var item in jsonData)
+                    {
+                        <div class="data-item">
+                            <h2>@item.name</h2>
+                            <p><strong>Name:</strong> @item.name</p>
+                            <p><strong>Email:</strong> @item.email</p>
+                            <p><strong>Role:</strong> @item.role</p>
+                            <p><strong>Address:</strong> @item.address</p>
+                            <p><strong>Password:</strong> @item.password</p>
+
+                            <a asp-action="Edit" asp-controller="Customer" asp-route-id="@item.customerId" class="btn btn-info edit"><i class="fas fa-edit"></i>Edit Customer</a>
+                            <a asp-action="Delete" asp-controller="Customer" asp-route-id="@item.customerId" class="btn btn-danger delete"><i class="fas fa-trash-alt"></i>Delete Customer</a>
+                            <a asp-action="Details" asp-controller="Customer" asp-route-id="@item.customerId" class="btn btn-success view"><i class="fas fa-eye"></i>View Customer</a>
+                        </div>
+                    }
+                }
+                catch (Exception ex)
+                {
+                    <p>Error occurred while parsing JSON: @ex.Message</p>
+                }
+            }
+            else
+            {
+                <p>No data available</p>
+            }
+        </div>
+    </div>
+</body>
+

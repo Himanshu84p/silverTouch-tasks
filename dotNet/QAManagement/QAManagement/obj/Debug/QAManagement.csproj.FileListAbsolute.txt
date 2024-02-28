@@ -161,6 +161,6 @@ D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\bin\Antlr3.Runtime.pdb
 D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\obj\Debug\QAManagement.csproj.AssemblyReference.cache
 D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\obj\Debug\QAManagement.csproj.CoreCompileInputs.cache
-D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\obj\Debug\QAManagement.csproj.CopyComplete
 D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\obj\Debug\QAManagement.dll
 D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\obj\Debug\QAManagement.pdb
+D:\All_Silvertouch_Tasks\dotNet\QAManagement\QAManagement\obj\Debug\QAManage.3AD06558.Up2Date

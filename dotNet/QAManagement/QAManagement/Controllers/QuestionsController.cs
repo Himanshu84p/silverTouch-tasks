@@ -20,7 +20,7 @@ namespace QAManagement.Controllers
         public ActionResult Index(int id)
         {
             ViewBag.Qid = id;
-            Session["ForQuestionPaperId"] = id;
+            Session["ForQuestionPaperId"] = Convert.ToInt32(id);
             var questions = db.Questions.Where(q => q.QuestionPaperID == id);
             return View(questions.ToList());
         }
@@ -91,10 +91,10 @@ namespace QAManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                question.QuestionPaperID = id;
+                question.QuestionPaperID = Convert.ToInt32(Session["ForQuestionPaperId"]);
                 db.Entry(question).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", new {id});
+                return RedirectToAction("Index", new {id = Convert.ToInt32(Session["ForQuestionPaperId"]) });
             }
             ViewBag.QuestionPaperID = new SelectList(db.QuestionPapers, "QuestionPaperID", "Title", question.QuestionPaperID);
             return View(question);

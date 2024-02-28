@@ -143,21 +143,7 @@ namespace ConsumeApi.Controllers
         }
 
 
-        //deleting the user
-        // GET: UserController1/Delete/5
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    HttpResponseMessage response = await _httpClient.DeleteAsync($"http://192.168.11.99:8082/api/User/DeleteUserById/{id}");
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        // Redirect to Index action after successful deletion
-        //        return RedirectToAction("Index");
-        //    }
-        //    else
-        //    {
-        //        return View("Error");
-        //    }
-        //}
+ 
 
         // GET: UserController1/Delete/5
         public IActionResult DeleteConfirm(int id)

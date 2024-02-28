@@ -16,7 +16,7 @@ using QAManagement.Models;
 
 namespace QAManagement.Controllers
 {
-    
+
     public class UsersController : Controller
     {
         private QAManagementEntities db = new QAManagementEntities();
@@ -79,8 +79,17 @@ namespace QAManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-                var reqUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            var reqUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            if (reqUser == null)
+            {
+                ModelState.AddModelError("", "Invalid email or password.");
+            }
+            else
+            {
                 string decryptPass = DecryptString(reqUser.PasswordHash);
+
+
+
                 // Check if user exists and password matches
                 if (user != null && decryptPass == user.PasswordHash && user.Email == reqUser.Email)
                 {
@@ -115,10 +124,11 @@ namespace QAManagement.Controllers
                     // Invalid email or password, add error message to ModelState
                     ModelState.AddModelError("", "Invalid email or password.");
                 }
+            }
             return View();
         }
 
-        
+
         private string EncryptString(string plainText)
         {
             const string EncryptionKey = "qWE7&5pZ@2#9Df!1gH*3sKl$8oP5mN^0";
@@ -171,7 +181,7 @@ namespace QAManagement.Controllers
 
         public ActionResult Logout()
         {
-            Session.Clear(); 
+            Session.Clear();
             return RedirectToAction("Login"); // Redirect to login page after logout
         }
 
@@ -183,11 +193,12 @@ namespace QAManagement.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User EditedUser = db.Users.Find(id);
+            EditedUser.PasswordHash = DecryptString(EditedUser.PasswordHash);
             if (EditedUser == null)
             {
                 return HttpNotFound();
             }
-            
+
             return View(EditedUser);
         }
 
@@ -198,19 +209,20 @@ namespace QAManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                editedUser.PasswordHash = EncryptString(editedUser.PasswordHash);
+
                 db.Entry(editedUser).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+
             return View(editedUser);
         }
 
         [RoleAuthorization("Admin")]
         public ActionResult Delete(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -236,13 +248,13 @@ namespace QAManagement.Controllers
             }
             db.SaveChanges();
 
-            
+
 
             var userQuestionPapers = db.QuestionPapers.Where(q => q.CreatorID == id);
 
             foreach (var que in userQuestionPapers)
             {
-                
+
                 //removing questions of this que
                 var Questions = db.Questions.Where(q => q.QuestionPaperID == que.QuestionPaperID);
                 foreach (var oneQue in Questions)
@@ -254,7 +266,7 @@ namespace QAManagement.Controllers
                     }
                     db.Questions.Remove(oneQue);
                 }
-                
+
                 db.QuestionPapers.Remove(que);
             }
             db.SaveChanges();
