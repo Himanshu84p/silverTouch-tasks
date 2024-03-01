@@ -19,5 +19,7 @@ namespace OrderManagementAPI.Interfaces
 
         //Deleting the OrderItem
         public Task<OrderItem> DeleteOrderItemById(int id);
+
+        public Task<List<OrderItem>> GetItemByOrderId(int id);
     }
 }

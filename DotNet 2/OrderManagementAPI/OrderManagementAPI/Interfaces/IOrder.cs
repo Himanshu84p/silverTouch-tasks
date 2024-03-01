@@ -11,6 +11,9 @@ namespace OrderManagementAPI.Interfaces
         //getting the Order by id 
         public Task<Order> GetOrderById(int id);
 
+        //getting the Order by customerid 
+        public Task<List<Order>> GetOrderByCustomerId(int id);
+
         //Adding the Order
         public Task<OrderModal> AddOrder(OrderModal order);
 

@@ -59,6 +59,13 @@ namespace OrderManagementAPI.Repositories
             return data;
         }
 
+        //getting orders by customerId
+        public async Task<List<Order>> GetOrderByCustomerId(int id)
+        {
+            var custOrders = await _orderManagementApiContext.Orders.Where(o => o.CustomerId == id && o.IsDeleted == false).ToListAsync();
+            return custOrders;
+        }
+
         public async Task<Order> GetOrderById(int id)
         {
             var order = await _orderManagementApiContext.Orders.FindAsync(id);

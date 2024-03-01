@@ -18,7 +18,7 @@ namespace OrderManagementAPI.Controllers
         }
 
         //Getting all product controller
-        [HttpGet("GetAllProduct")]
+        [HttpGet]
         public async Task<IActionResult> GetAllProduct()
         {
 
@@ -27,7 +27,7 @@ namespace OrderManagementAPI.Controllers
             return Ok(data);
         }
 
-        [HttpGet("GetProductById/{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)
         {
             var product1 = await iproduct.GetProductById(id);
@@ -43,7 +43,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpPost("AddProduct")]
+        [HttpPost]
         public async Task<IActionResult> AddProduct(ProductModal prod)
         {
             if (prod == null)
@@ -58,7 +58,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpPut("UpdateProductById/{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProductById(int id, ProductModal ctm)
         {
             if (id == ctm.ProductId)
@@ -73,7 +73,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpDelete("DeleteProductById/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProductById(int id)
         {
             if (id == null)

@@ -36,8 +36,8 @@ namespace OrderManagementUI.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                dynamic student = JObject.Parse(content);
-                return View("Details",student);
+                dynamic customer = JObject.Parse(content);
+                return View("Details",customer);
             }
             return NotFound();
         }
@@ -66,13 +66,56 @@ namespace OrderManagementUI.Controllers
 
             if (response.IsSuccessStatusCode)
             {
+                TempData["SuccessMessage"] = "Customer Created successfully.";
                 return RedirectToAction("Index");
             }
             return View();
         }
-
         
+        //Edit View
 
-        
+        public async Task<IActionResult> Edit(int id)
+        {
+            var response = await _httpClient.GetAsync(_baseAddress + $"/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                dynamic customer = JObject.Parse(content);
+                
+                return View("Edit", customer);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Dictionary<string, string> formData)
+        {
+           
+
+            var jsonData = JsonConvert.SerializeObject(formData);
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync($"{_baseAddress}/{id}", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index", "Customer"); 
+            }
+            else
+            {
+                return View("Edit", formData);
+            }
+        }
+
+       
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _httpClient.DeleteAsync(_baseAddress + $"/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["success"] = "User Deleted Successfully";
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
     }
 }

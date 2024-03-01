@@ -20,7 +20,7 @@ namespace OrderManagementAPI.Controllers
 
 
         //Getting all Order controller
-        [HttpGet("GetAllOrder")]
+        [HttpGet]
         public async Task<IActionResult> GetAllOrder()
         {
 
@@ -29,7 +29,24 @@ namespace OrderManagementAPI.Controllers
             return Ok(data);
         }
 
-        [HttpGet("GetOrderById/{id}")]
+        //getting the order by customerId
+        [HttpGet("GetOrderByCustomerId/{id}")]
+        public async Task<IActionResult> GetOrderByCustomerId(int id)
+        {
+            var custOrders = await iorder.GetOrderByCustomerId(id);
+            if (custOrders != null)
+            {
+                return Ok(custOrders);
+
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetOrderById(int id)
         {
             var order1 = await iorder.GetOrderById(id);
@@ -60,7 +77,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpPut("UpdateOrderById/{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOrderById(int id, OrderModal od)
         {
             if (id == od.OrderId)
@@ -75,7 +92,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpDelete("DeleteOrderById/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrderById(int id)
         {
             if (id == null)

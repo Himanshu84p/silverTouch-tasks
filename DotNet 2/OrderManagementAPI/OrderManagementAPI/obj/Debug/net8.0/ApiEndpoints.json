@@ -80,40 +80,8 @@
   },
   {
     "ContainingType": "OrderManagementAPI.Controllers.OrderController",
-    "Method": "AddOrder",
-    "RelativePath": "api/Order/AddOrder",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "od",
-        "Type": "OrderManagementAPI.Modals.OrderModal",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrderManagementAPI.Controllers.OrderController",
-    "Method": "DeleteOrderById",
-    "RelativePath": "api/Order/DeleteOrderById/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrderManagementAPI.Controllers.OrderController",
     "Method": "GetAllOrder",
-    "RelativePath": "api/Order/GetAllOrder",
+    "RelativePath": "api/Order",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -123,7 +91,7 @@
   {
     "ContainingType": "OrderManagementAPI.Controllers.OrderController",
     "Method": "GetOrderById",
-    "RelativePath": "api/Order/GetOrderById/{id}",
+    "RelativePath": "api/Order/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -139,7 +107,7 @@
   {
     "ContainingType": "OrderManagementAPI.Controllers.OrderController",
     "Method": "UpdateOrderById",
-    "RelativePath": "api/Order/UpdateOrderById/{id}",
+    "RelativePath": "api/Order/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -158,26 +126,42 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
-    "Method": "AddOrderItem",
-    "RelativePath": "api/OrderItem/AddOrderItem",
-    "HttpMethod": "POST",
+    "ContainingType": "OrderManagementAPI.Controllers.OrderController",
+    "Method": "DeleteOrderById",
+    "RelativePath": "api/Order/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "odItem",
-        "Type": "OrderManagementAPI.Modals.OrderItemModal",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
-    "Method": "DeleteOrderItemById",
-    "RelativePath": "api/OrderItem/DeleteOrderItemById/{id}",
-    "HttpMethod": "DELETE",
+    "ContainingType": "OrderManagementAPI.Controllers.OrderController",
+    "Method": "AddOrder",
+    "RelativePath": "api/Order/AddOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "od",
+        "Type": "OrderManagementAPI.Modals.OrderModal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrderManagementAPI.Controllers.OrderController",
+    "Method": "GetOrderByCustomerId",
+    "RelativePath": "api/Order/GetOrderByCustomerId/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -192,11 +176,80 @@
   {
     "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
     "Method": "GetAllOrderItem",
-    "RelativePath": "api/OrderItem/GetAllOrderItem",
+    "RelativePath": "api/OrderItem",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
+    "Method": "AddOrderItem",
+    "RelativePath": "api/OrderItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "odItem",
+        "Type": "OrderManagementAPI.Modals.OrderItemModal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
+    "Method": "GetItemByOrderId",
+    "RelativePath": "api/OrderItem/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
+    "Method": "UpdateOrderItemById",
+    "RelativePath": "api/OrderItem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "odItem",
+        "Type": "OrderManagementAPI.Modals.OrderItemModal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
+    "Method": "DeleteOrderItemById",
+    "RelativePath": "api/OrderItem/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -216,30 +269,19 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrderManagementAPI.Controllers.OrderItemController",
-    "Method": "UpdateOrderItemById",
-    "RelativePath": "api/OrderItem/UpdateOrderItemById/{id}",
-    "HttpMethod": "PUT",
+    "ContainingType": "OrderManagementAPI.Controllers.ProductController",
+    "Method": "GetAllProduct",
+    "RelativePath": "api/Product",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "odItem",
-        "Type": "OrderManagementAPI.Modals.OrderItemModal",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
     "ContainingType": "OrderManagementAPI.Controllers.ProductController",
     "Method": "AddProduct",
-    "RelativePath": "api/Product/AddProduct",
+    "RelativePath": "api/Product",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -254,34 +296,8 @@
   },
   {
     "ContainingType": "OrderManagementAPI.Controllers.ProductController",
-    "Method": "DeleteProductById",
-    "RelativePath": "api/Product/DeleteProductById/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrderManagementAPI.Controllers.ProductController",
-    "Method": "GetAllProduct",
-    "RelativePath": "api/Product/GetAllProduct",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrderManagementAPI.Controllers.ProductController",
     "Method": "GetProductById",
-    "RelativePath": "api/Product/GetProductById/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -297,7 +313,7 @@
   {
     "ContainingType": "OrderManagementAPI.Controllers.ProductController",
     "Method": "UpdateProductById",
-    "RelativePath": "api/Product/UpdateProductById/{id}",
+    "RelativePath": "api/Product/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -310,6 +326,22 @@
       {
         "Name": "ctm",
         "Type": "OrderManagementAPI.Modals.ProductModal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrderManagementAPI.Controllers.ProductController",
+    "Method": "DeleteProductById",
+    "RelativePath": "api/Product/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

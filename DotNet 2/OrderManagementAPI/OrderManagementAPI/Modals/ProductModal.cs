@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using OrderManagementAPI.DataAccess;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrderManagementAPI.Modals
 {
@@ -20,5 +21,6 @@ namespace OrderManagementAPI.Modals
         public int? StockQuantity { get; set; }
 
         public bool? IsDeleted { get; set; }
+
     }
 }

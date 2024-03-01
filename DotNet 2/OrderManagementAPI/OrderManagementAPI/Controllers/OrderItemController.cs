@@ -18,11 +18,20 @@ namespace OrderManagementAPI.Controllers
         }
 
         //Getting all OrderItem controller
-        [HttpGet("GetAllOrderItem")]
+        [HttpGet]
         public async Task<IActionResult> GetAllOrderItem()
         {
 
             var data = await iorderitem.GetAllOrderItem();
+
+            return Ok(data);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetItemByOrderId(int id)
+        {
+
+            var data = await iorderitem.GetItemByOrderId(id);
 
             return Ok(data);
         }
@@ -43,7 +52,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpPost("AddOrderItem")]
+        [HttpPost]
         public async Task<IActionResult> AddOrderItem(OrderItemModal odItem)
         {
             if (odItem == null)
@@ -58,7 +67,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpPut("UpdateOrderItemById/{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOrderItemById(int id, OrderItemModal odItem)
         {
             if (id == odItem.OrderItemId)
@@ -73,7 +82,7 @@ namespace OrderManagementAPI.Controllers
 
         }
 
-        [HttpDelete("DeleteOrderItemById/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrderItemById(int id)
         {
             if (id == null)

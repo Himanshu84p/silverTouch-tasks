@@ -1,11 +1,9 @@
 ﻿
-
-
-
 <head>
     <title>Customer's Data</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -96,7 +94,12 @@
     </style>
 </head>
 <body>
+    
+    
+
     <div class="container">
+       
+
         <h1>Customer's Data</h1>
         <a asp-controller="Customer" asp-action="Create" class="btn btn-primary create-btn"><i class="fas fa-plus"></i>Create New Customer</a>
         <div id="data-container">
@@ -109,15 +112,16 @@
                     {
                         <div class="data-item">
                             <h2>@item.name</h2>
-                            <p><strong>Name:</strong> @item.name</p>
+                            @* <p><strong>Name:</strong> @item.name</p>
                             <p><strong>Email:</strong> @item.email</p>
                             <p><strong>Role:</strong> @item.role</p>
                             <p><strong>Address:</strong> @item.address</p>
-                            <p><strong>Password:</strong> @item.password</p>
+                            <p><strong>Password:</strong> @item.password</p> *@
 
                             <a asp-action="Edit" asp-controller="Customer" asp-route-id="@item.customerId" class="btn btn-info edit"><i class="fas fa-edit"></i>Edit Customer</a>
                             <a asp-action="Delete" asp-controller="Customer" asp-route-id="@item.customerId" class="btn btn-danger delete"><i class="fas fa-trash-alt"></i>Delete Customer</a>
                             <a asp-action="Details" asp-controller="Customer" asp-route-id="@item.customerId" class="btn btn-success view"><i class="fas fa-eye"></i>View Customer</a>
+                            <a asp-action="Index" asp-controller="Order" asp-route-id="@item.customerId" class="btn btn-success view"><i class="fas fa-eye"></i>View Orders</a>
                         </div>
                     }
                 }
@@ -132,5 +136,7 @@
             }
         </div>
     </div>
+    
+
 </body>
 
