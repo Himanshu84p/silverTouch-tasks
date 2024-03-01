@@ -1,0 +1,36 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Order Items</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Items</h1>
+        <div class="row">
+            @{
+                dynamic jsonData = Newtonsoft.Json.JsonConvert.DeserializeObject(Model);
+            }
+            @foreach (var item in jsonData)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.orderItemId</h5>
+                            <p class="card-text">Order Id: @item.orderId</p>
+                            <p class="card-text">Quantity: @item.quantity</p>
+                            <p class="card-text">Unit Price: @item.unitPrice</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+

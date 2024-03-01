@@ -1,0 +1,87 @@
+﻿@model string
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Orders</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #555;
+            margin: 20px;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .order-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+            .order-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .order-item h2 {
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+        p {
+            margin-bottom: 5px;
+        }
+
+        .no-orders {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Orders</h1>
+        <a asp-controller="Order" asp-action="Create" asp-route-id="@TempData["customerId"]" class="btn btn-primary create-btn"><i class="fas fa-plus"></i>Create New Order</a>
+        <div id="order-container">
+            @if (!string.IsNullOrEmpty(Model))
+            {
+                var custOrders = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(Model);
+                foreach (var order in custOrders)
+                {
+                    <div class="order-item">
+                        <h2>@order.orderId</h2>
+                        <p><strong>Customer Id:</strong> @order.customerId</p>
+                        <p><strong>Order Date:</strong> @order.orderDate</p>
+                        <p><strong>Status:</strong> @order.status</p>
+                        <p><strong>Total Price:</strong> @order.totalAmount</p>
+
+                        <a asp-action="Delete" asp-controller="Order" asp-route-id="@order.orderId" asp-route-customerId="@order.customerId" class="btn btn-danger delete"><i class="fas fa-trash-alt"></i>Delete Order</a>
+                        <a asp-action="AddProduct" asp-controller="OrderItem" asp-route-id="@order.orderId" class="btn btn-success view"><i class="fas fa-plus"></i>Add Product</a>
+                        <a asp-action="ViewProduct" asp-controller="OrderItem" asp-route-id="@order.orderId" class="btn btn-success view"><i class="fas fa-eye"></i>View Product</a>
+                        
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="no-orders">No orders available for this customer.</p>
+            }
+        </div>
+    </div>
+</body>
+</html>

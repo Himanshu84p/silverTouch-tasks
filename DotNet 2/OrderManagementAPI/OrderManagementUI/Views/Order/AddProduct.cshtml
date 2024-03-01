@@ -1,0 +1,43 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product to Order</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Product to Order</h1>
+        <div class="row">
+            @{
+                dynamic jsonData = Newtonsoft.Json.JsonConvert.DeserializeObject(Model);
+            }
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.name</h5>
+                            <p class="card-text">@product.description</p>
+                            <p class="card-text">Price: $@product.price</p>
+                            <form method="post" action="@Url.Action("AddProductToOrder", "Order")">
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add to Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
