@@ -1,0 +1,6 @@
+#  Take 10 numbers in a list(array) and print only first 3 numbers using loop.
+
+num_list = [1,2,3,4,5,6,7,8,9,10]
+
+for i in range(0,3):
+    print(num_list[i])
