@@ -11,7 +11,7 @@ def hexadecimal_to_octal(hexadecimal):
     octal = oct(decimal)[2:]
     return octal
 
-hexadecimal_number = '10'
+hexadecimal_number = 'A'
 binary = hexadecimal_to_binary(hexadecimal_number)
 decimal = hexadecimal_to_decimal(hexadecimal_number)
 octal = hexadecimal_to_octal(hexadecimal_number)
