@@ -4,7 +4,12 @@
     ViewBag.Title = "Approved Question Papers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
 <h2>Approved Question Papers</h2>
 
 <div class="row">

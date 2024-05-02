@@ -54,6 +54,16 @@ namespace QAManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "QuestionID,QuestionText,Option1,Option2,Option3,Option4,CorrectAnswer")] Question question,int id)
         {
+            // Custom validation logic to check if any options are the same
+            if (HasDuplicateOptions(question))
+            {
+                ModelState.AddModelError("CorrectAnswer", "Options should be unique.");
+            }
+
+            if (!IsValidAnswer(question))
+            {
+                ModelState.AddModelError("CorrectAnswer", "Please select a valid answer from the provided options.");
+            }
             if (ModelState.IsValid)
             {
                 
@@ -63,8 +73,23 @@ namespace QAManagement.Controllers
                 return RedirectToAction("Index", new {id});
             }
 
+            
             ViewBag.QuestionPaperID = new SelectList(db.QuestionPapers, "QuestionPaperID", "Title", question.QuestionPaperID);
             return View(question);
+        }
+
+        // Custom method to validate correct answer against options
+        private bool IsValidAnswer(Question question)
+        {
+            string[] options = { question.Option1, question.Option2, question.Option3, question.Option4 };
+            return options.Contains(question.CorrectAnswer);
+        }
+
+        // Custom method to check if any options are the same
+        private bool HasDuplicateOptions(Question question)
+        {
+            var options = new List<string> { question.Option1, question.Option2, question.Option3, question.Option4 };
+            return options.GroupBy(x => x).Any(g => g.Count() > 1);
         }
 
         // GET: Questions/Edit/5

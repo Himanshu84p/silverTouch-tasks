@@ -25,9 +25,9 @@ namespace QAManagement.Models
 
         [Key]
         public int QuestionPaperID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Title Field is required")]
         public string Title { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Description Field is required")]
         public string Description { get; set; }
         public System.DateTime CreationDate { get; set; }
         public string Status { get; set; }

@@ -86,6 +86,7 @@ namespace QAManagement.Controllers
             // Save changes to the database
             db.SaveChanges();
 
+            TempData["SuccessMessage"] = "Answers successfully submitted.";
             // Redirect to a success page or back to the index page
             return RedirectToAction("Index", "Student");
         }

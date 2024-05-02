@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\views\\student\\attempt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\views\\student\\attempt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\views\\questions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\views\\questions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|d:\\all_silvertouch_tasks\\dotnet\\qamanagement\\qamanagement\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C9E2CB86-3817-45CE-BB23-E07BF72958F3}|QAManagement\\QAManagement.csproj|solutionrelative:qamanagement\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "QAManagement\\Controllers\\UsersController.cs",
-              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "QAManagement\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAQwH4AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T11:13:39.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Questions\\Index.cshtml",
-              "RelativeDocumentMoniker": "QAManagement\\Views\\Questions\\Index.cshtml",
-              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Questions\\Index.cshtml",
-              "RelativeToolTip": "QAManagement\\Views\\Questions\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-28T10:56:28.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "QuestionsController.cs",
-              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Controllers\\QuestionsController.cs",
-              "RelativeDocumentMoniker": "QAManagement\\Controllers\\QuestionsController.cs",
-              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Controllers\\QuestionsController.cs",
-              "RelativeToolTip": "QAManagement\\Controllers\\QuestionsController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAqwBUAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T10:49:46.891Z",
+              "Title": "Attempt.cshtml",
+              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Student\\Attempt.cshtml",
+              "RelativeDocumentMoniker": "QAManagement\\Views\\Student\\Attempt.cshtml",
+              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Student\\Attempt.cshtml",
+              "RelativeToolTip": "QAManagement\\Views\\Student\\Attempt.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-02T05:49:24.213Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Questions\\Edit.cshtml",
-              "RelativeDocumentMoniker": "QAManagement\\Views\\Questions\\Edit.cshtml",
-              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Questions\\Edit.cshtml",
-              "RelativeToolTip": "QAManagement\\Views\\Questions\\Edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAbAAAA",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "QAManagement\\Views\\Student\\Index.cshtml",
+              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "QAManagement\\Views\\Student\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-28T10:34:23.004Z",
+              "WhenOpened": "2024-05-02T05:49:06.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "QAManagement\\Controllers\\StudentController.cs",
+              "ToolTip": "D:\\All_Silvertouch_Tasks\\dotNet\\QAManagement\\QAManagement\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "QAManagement\\Controllers\\StudentController.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAwwBYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T05:44:35.374Z",
               "EditorCaption": ""
             }
           ]

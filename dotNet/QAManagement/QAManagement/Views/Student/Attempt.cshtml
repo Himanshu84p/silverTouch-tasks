@@ -22,7 +22,7 @@
                             <input class="form-check-input" type="radio" name="answer_@question.QuestionID" value="@question.Option1" required>
                             <label class="form-check-label">@question.Option1</label>
                         </div>
-                        <div class="form-check"> 
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="answer_@question.QuestionID" value="@question.Option2" required>
                             <label class="form-check-label">@question.Option2</label>
                         </div>
@@ -40,4 +40,6 @@
         }
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+
 }

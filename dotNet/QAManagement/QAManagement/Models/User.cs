@@ -26,15 +26,18 @@ namespace QAManagement.Models
 
         [Key]
         public int UserID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Username Field is required")]
+        [MaxLength(50, ErrorMessage = "Length should be less than 50")]
+        [MinLength(5, ErrorMessage = "Minimum length should be 5")]
         public string Username { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Password Field is required")]
+        [MinLength(5, ErrorMessage = "Minimum length should be 6")]
         [DisplayName("Password")]
         public string PasswordHash { get; set; }
-        [Required]
-        [EmailAddress(ErrorMessage = "Enter Valid EmailAddress")]
+        [Required(ErrorMessage = "Email Field is required")]
+        [EmailAddress(ErrorMessage = "Enter Valid Email Address")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Role Field is required")]
         public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

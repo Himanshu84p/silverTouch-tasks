@@ -87,6 +87,15 @@
                     @Html.ActionLink("Delete Paper", "Delete", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-danger" })
                     @Html.ActionLink("Send for Approval", "SendForApproval", "Teacher", new { id = item.QuestionPaperID }, new { @class = "btn btn-success disabled" })
                 }
+                else if (item.Status == "Pending")
+                {
+                    @Html.ActionLink("Add New Question", "Create", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-primary" })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-warning" })
+                    @Html.ActionLink("View Question Paper", "Details", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("View Questions", "Index", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
+                    @Html.ActionLink("Delete Paper", "Delete", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-danger" })
+
+                }
                 else
                 {
                     @Html.ActionLink("Add New Question", "Create", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-primary" })
@@ -94,7 +103,7 @@
                     @Html.ActionLink("View Question Paper", "Details", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
                     @Html.ActionLink("View Questions", "Index", "Questions", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-info" })
                     @Html.ActionLink("Delete Paper", "Delete", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-danger" })
-                    @Html.ActionLink("Send for Approval", "SendForApproval","Teacher", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-success" })
+                    @Html.ActionLink("Send for Approval", "SendForApproval", "Teacher", new { id = item.QuestionPaperID }, new { @class = "btn btn-outline-success" })
                 }
 
             </div>
