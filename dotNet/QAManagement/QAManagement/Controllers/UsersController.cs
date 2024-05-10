@@ -88,8 +88,6 @@ namespace QAManagement.Controllers
             {
                 string decryptPass = DecryptString(reqUser.PasswordHash);
 
-
-
                 // Check if user exists and password matches
                 if (user != null && decryptPass == user.PasswordHash && user.Email == reqUser.Email)
                 {

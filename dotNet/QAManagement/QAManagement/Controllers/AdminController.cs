@@ -3,6 +3,8 @@ using QAManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -39,7 +41,9 @@ namespace QAManagement.Controllers
             db.SaveChanges();
             return RedirectToAction("Pending");
         }
+
         
+
     }
    
 }

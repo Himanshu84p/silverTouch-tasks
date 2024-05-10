@@ -48,6 +48,7 @@
                         {
                             new SelectListItem { Text = "Student", Value = "Student" },
                             new SelectListItem { Text = "Teacher", Value = "Teacher" },
+                            new SelectListItem { Text = "Admin", Value = "Admin" },
                         }, "Value", "Text"), "-- Select Role --", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
                     </div>
