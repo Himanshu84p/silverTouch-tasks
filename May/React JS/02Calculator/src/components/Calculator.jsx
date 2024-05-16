@@ -7,16 +7,16 @@ function Calculator() {
   const [currOperation, setCurrOperation] = useState("");
   const [prevOperation, setPrevOperation] = useState("");
   const [operator, setOperator] = useState(undefined);
+  const [operatorPressed, setOperatorPressed] = useState(false);
 
-  //for reset the calc
   const clear = useCallback(() => {
     setCurrOperation("");
     setPrevOperation("");
     setOperator(undefined);
+    setOperatorPressed(false);
     updateOutput();
   }, []);
 
-  //remove one digit from an end
   const backspace = useCallback(() => {
     setCurrOperation((prevCurrOperation) =>
       prevCurrOperation.toString().slice(0, -1)
@@ -24,7 +24,6 @@ function Calculator() {
     updateOutput();
   }, []);
 
-  //calculate the values
   const calculate = useCallback(() => {
     let val;
     const prevVal = parseFloat(prevOperation);
@@ -51,22 +50,26 @@ function Calculator() {
     }
     setCurrOperation(val);
     setOperator(undefined);
-    setPrevOperation("");
+    setPrevOperation(val.toString());
+    setOperatorPressed(false);
   }, [currOperation, operator, prevOperation]);
 
-  //add number in the display
   const addNum = useCallback(
     (number) => {
-      if (number === "." && currOperation.includes(".")) return;
-      setCurrOperation(
-        (prevCurrOperation) => prevCurrOperation.toString() + number.toString()
-      );
+      if (operatorPressed) {
+        setCurrOperation(number.toString());
+        setOperatorPressed(false);
+      } else {
+        setCurrOperation(
+          (prevCurrOperation) =>
+            prevCurrOperation.toString() + number.toString()
+        );
+      }
       updateOutput();
     },
-    [currOperation]
+    [operatorPressed]
   );
 
-  //operator selection
   const selectOperator = useCallback(
     (selectedOperator) => {
       if (currOperation === "") return;
@@ -74,18 +77,13 @@ function Calculator() {
         calculate();
       }
       setOperator(selectedOperator);
-      if (currOperation === "" && prevOperation !== "") {
-        return;
-      } else {
-        setPrevOperation(currOperation);
-        setCurrOperation("");
-      }
+      setPrevOperation(currOperation);
+      setOperatorPressed(true);
       updateOutput();
     },
     [calculate, currOperation, prevOperation]
   );
 
-  //format number in display
   const formatNumber = useCallback((number) => {
     const stringNumber = number.toString();
     const integerDigits = parseFloat(stringNumber.split(".")[0]);
@@ -113,6 +111,7 @@ function Calculator() {
       setCurrOperation(prevOperation);
       setPrevOperation("");
       setOperator(undefined);
+      setOperatorPressed(false);
     } else {
       calculate();
     }
