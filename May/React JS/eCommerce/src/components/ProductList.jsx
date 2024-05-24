@@ -6,6 +6,7 @@ import Rating from "./Rating.jsx";
 const ProductList = () => {
   const { dispatch } = useContext(CartContext);
 
+  //initial data 
   const products = [
     {
       id: 1,
@@ -105,6 +106,7 @@ const ProductList = () => {
     },
   ];
 
+  //add to cart function : product will be added in the cart
   const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: { ...product, quantity: 1 } });
     Notification({ message: `${product.name} added to cart` });

@@ -4,6 +4,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 const Rating = ({ value }) => {
   const stars = [];
 
+  //calculating stars
   for (let i = 0; i < 5; i++) {
     if (i < value) {
       stars.push(

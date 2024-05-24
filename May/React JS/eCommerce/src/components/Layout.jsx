@@ -7,6 +7,7 @@ function Layout() {
   return (
     <div>
         <Header /> 
+        //outlet dynamic component as per route
         <Outlet /> 
     </div>
   )

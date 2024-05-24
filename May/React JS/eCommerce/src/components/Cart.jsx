@@ -8,6 +8,7 @@ const Cart = () => {
   const { items } = state;
   console.log("items", items);
 
+  //calculate total bill using useMemo for optimization
   const totalBill = useMemo(() => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   }, [items]);

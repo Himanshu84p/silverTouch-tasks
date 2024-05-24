@@ -9,6 +9,7 @@ function Calculator() {
   const [operator, setOperator] = useState(undefined);
   const [operatorPressed, setOperatorPressed] = useState(false);
 
+  //clear function
   const clear = useCallback(() => {
     setCurrOperation("");
     setPrevOperation("");
@@ -17,6 +18,7 @@ function Calculator() {
     updateOutput();
   }, []);
 
+  //one char delete func
   const backspace = useCallback(() => {
     setCurrOperation((prevCurrOperation) =>
       prevCurrOperation.toString().slice(0, -1)
@@ -24,6 +26,7 @@ function Calculator() {
     updateOutput();
   }, []);
 
+  //calculate operation
   const calculate = useCallback(() => {
     let val;
     const prevVal = parseFloat(prevOperation);
@@ -54,6 +57,7 @@ function Calculator() {
     setOperatorPressed(false);
   }, [currOperation, operator, prevOperation]);
 
+  //number tapped
   const addNum = useCallback(
     (number) => {
       if (operatorPressed) {
@@ -70,6 +74,7 @@ function Calculator() {
     [operatorPressed]
   );
 
+  //operator selection
   const selectOperator = useCallback(
     (selectedOperator) => {
       if (currOperation === "") return;
@@ -84,6 +89,7 @@ function Calculator() {
     [calculate, currOperation, prevOperation]
   );
 
+  //format diplaying number
   const formatNumber = useCallback((number) => {
     const stringNumber = number.toString();
     const integerDigits = parseFloat(stringNumber.split(".")[0]);
@@ -106,6 +112,7 @@ function Calculator() {
     }
   }, []);
 
+  //calculate final result
   const equalFunction = useCallback(() => {
     if (currOperation === "" && prevOperation !== "") {
       setCurrOperation(prevOperation);

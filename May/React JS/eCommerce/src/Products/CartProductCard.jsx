@@ -7,6 +7,7 @@ import ErrorNotification from "../toast/ErrorNotification.jsx";
 function CartProductCard({ items, item }) {
   const { dispatch } = useContext(CartContext);
 
+  //remove cart functionality
   const removeFromCart = (id) => {
     console.log("remove cart id", id);
     dispatch({ type: "REMOVE_FROM_CART", payload: id });
@@ -14,10 +15,12 @@ function CartProductCard({ items, item }) {
     ErrorNotification({ message: `${productName} removed from cart` });
   };
 
+  //increament quantity
   const incrementQuantity = (id) => {
     dispatch({ type: "INCREMENT_QUANTITY", payload: id });
   };
 
+  //decrement quantity
   const decrementQuantity = (id) => {
     dispatch({ type: "DECREMENT_QUANTITY", payload: id });
   };
