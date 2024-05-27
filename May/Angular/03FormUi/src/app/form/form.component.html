@@ -1,0 +1,26 @@
+<div class="main mx-auto">
+  <h1 class="text-center">Registration Form</h1>
+  <div class="from-container">
+    <form class="example-form">
+
+      <!-- form input fields  -->
+      <app-input label="First Name" type="text"></app-input>
+      <app-input label="Last Name" type="text"></app-input>
+      <app-input label="Phone Number" type="number"></app-input>
+      <app-input label="Email" type="email"></app-input>
+
+      <!-- checkbox  -->
+      <label class="fw-bold">Hobbies:</label>
+      <app-checkbox
+        [items]="['Reading Books', 'Badminton', 'Tracking', 'Travelling', 'Video Games']"
+      ></app-checkbox>
+
+      <!-- radio buttons  -->
+      <label class="fw-bold">Gender :</label>
+      <app-radio [options]="['Male', 'Female', 'Other']"></app-radio>
+
+      <!-- submit button  -->
+      <app-button class="d-block text-center mt-3" label="Submit"></app-button>
+    </form>
+  </div>
+</div>

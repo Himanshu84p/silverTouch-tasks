@@ -9,8 +9,11 @@ import { NgClass, NgIf } from '@angular/common';
   styleUrl: './button.component.css',
 })
 export class ButtonComponent {
+  // label for btn text
   @Input() label: string = '';
-  @Input() buttonType: string | undefined = ''; // Add input for button type
+  //btn type operator || operand || equal
+  @Input() buttonType: string | undefined = '';
+  //btn click event to handle click
   @Output() buttonClick = new EventEmitter<string>();
 
   onClick() {

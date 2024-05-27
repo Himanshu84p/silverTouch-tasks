@@ -1,4 +1,5 @@
 <div class="calculator">
+  <!-- displaying the display components -->
   <app-display
     [value]="previousValue"
     class="display previous-display"
@@ -7,6 +8,7 @@
     [value]="displayValue"
     class="display current-display"
   ></app-display>
+  <!-- rendering buttons through for of loop  -->
   <div class="buttons">
     <app-button
       *ngFor="let button of buttons"
