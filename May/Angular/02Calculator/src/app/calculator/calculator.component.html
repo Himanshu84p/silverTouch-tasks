@@ -1,0 +1,19 @@
+<div class="calculator">
+  <app-display
+    [value]="previousValue"
+    class="display previous-display"
+  ></app-display>
+  <app-display
+    [value]="displayValue"
+    class="display current-display"
+  ></app-display>
+  <div class="buttons">
+    <app-button
+      *ngFor="let button of buttons"
+      [label]="button.label"
+      [buttonType]="button.type"
+      (buttonClick)="onButtonClick(button.label)"
+    >
+    </app-button>
+  </div>
+</div>

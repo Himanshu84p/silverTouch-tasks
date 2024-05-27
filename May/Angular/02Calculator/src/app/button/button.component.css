@@ -1,0 +1,25 @@
+button {
+  color: black;
+  border: none;
+  font-size: 1.5rem;
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px lightblue;
+}
+button:active {
+  transform: scale(1.1);
+}
+
+.operator {
+  background-color: rosybrown;
+}
+
+.operand {
+  background-color: white;
+}
+.equals {
+  background-color: black;
+  color: #fff;
+  grid-column: span 2 !important;
+}

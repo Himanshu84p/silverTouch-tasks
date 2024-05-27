@@ -4,6 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+    //accessing the global state using context hook
   const { state } = useContext(CartContext);
   const { items } = state;
 

@@ -4,9 +4,9 @@ import { CartContext } from "../context/CartContext";
 import CartProductCard from "../Products/CartProductCard.jsx";
 
 const Cart = () => {
+  //accessing the global state using context hook
   const { state } = useContext(CartContext);
   const { items } = state;
-  console.log("items", items);
 
   //calculate total bill using useMemo for optimization
   const totalBill = useMemo(() => {

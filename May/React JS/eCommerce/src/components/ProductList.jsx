@@ -4,9 +4,10 @@ import Notification from "../toast/Notification";
 import Rating from "./Rating.jsx";
 
 const ProductList = () => {
+  //accessing the actions in context using dispatch
   const { dispatch } = useContext(CartContext);
 
-  //initial data 
+  //initial data
   const products = [
     {
       id: 1,

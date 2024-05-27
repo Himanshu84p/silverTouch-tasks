@@ -1,0 +1,10 @@
+<button
+  (click)="onClick()"
+  [ngClass]="{
+    operator: buttonType === 'operator',
+    operand: buttonType === undefined,
+    equals: buttonType === 'equals'
+  }"
+>
+  {{ label }}
+</button>
