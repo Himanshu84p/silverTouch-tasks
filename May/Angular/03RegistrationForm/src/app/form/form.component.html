@@ -1,0 +1,191 @@
+<div class="main mx-auto">
+  <h1 class="text-center">Registration Form</h1>
+  <div class="from-container">
+    <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="inputfields">
+        <!-- first name  -->
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            value=""
+            type="text"
+            formControlName="firstname"
+            id="firstname"
+          />
+          <!-- checking if wrong input then render below errors  -->
+          <div
+            *ngIf="
+              validateForm().firstname?.invalid &&
+              (validateForm().firstname?.dirty ||
+                validateForm().firstname?.touched ||
+                isSubmitted)
+            "
+          >
+            <small *ngIf="validateForm().firstname?.errors?.['required']"
+              >First Name is required.</small
+            >
+            <small *ngIf="validateForm().firstname?.errors?.['minlength']"
+              >First Name must be at least 3 characters long.</small
+            >
+          </div>
+        </mat-form-field>
+        <!-- last name  -->
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            value=""
+            type="text"
+            formControlName="lastname"
+            id="lastname"
+          />
+          <!-- checking if wrong input then render below errors  -->
+          <div
+            *ngIf="
+              validateForm().lastname?.invalid &&
+              (validateForm().lastname?.dirty ||
+                validateForm().lastname?.touched ||
+                isSubmitted)
+            "
+          >
+            <small *ngIf="validateForm().lastname?.errors?.['required']"
+              >Last Name is required.</small
+            >
+            <small *ngIf="validateForm().lastname?.errors?.['minlength']"
+              >Last Name must be at least 3 characters long.</small
+            >
+          </div>
+        </mat-form-field>
+        <!-- email  -->
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            value=""
+            type="email"
+            formControlName="email"
+            id="email"
+          />
+          <!-- checking if wrong input then render below errors  -->
+          <div
+            *ngIf="
+              validateForm().email?.invalid &&
+              (validateForm().email?.dirty ||
+                validateForm().email?.touched ||
+                isSubmitted)
+            "
+          >
+            <small *ngIf="validateForm().email?.errors?.['required']"
+              >Email is required</small
+            >
+            <small *ngIf="validateForm().email?.errors?.['email']"
+              >Enter Valid Email</small
+            >
+          </div>
+        </mat-form-field>
+        <!-- phone number  -->
+        <mat-form-field class="example-full-width">
+          <mat-label>Phone Number</mat-label>
+          <input
+            matInput
+            value=""
+            type="number"
+            formControlName="phone"
+            id="phone"
+          />
+          <!-- checking if wrong input then render below errors  -->
+          <div
+            *ngIf="
+              validateForm().phone?.invalid &&
+              (validateForm().phone?.dirty ||
+                validateForm().phone?.touched ||
+                isSubmitted)
+            "
+          >
+            <small *ngIf="validateForm().phone?.errors?.['required']"
+              >Phone Number is required.</small
+            >
+            <small *ngIf="validateForm().phone?.errors?.['pattern']"
+              >Phone Number must be 10 digit</small
+            >
+          </div>
+        </mat-form-field>
+        <!-- password  -->
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter your password</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+            id="password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <!-- checking if wrong input then render below errors  -->
+          <div
+            *ngIf="
+              validateForm().password?.invalid &&
+              (validateForm().password?.dirty ||
+                validateForm().password?.touched ||
+                isSubmitted)
+            "
+          >
+            <small *ngIf="validateForm().password?.errors?.['required']"
+              >Password is required.</small
+            >
+            <small *ngIf="validateForm().password?.errors?.['minlength']"
+              >Password should min 8 length</small
+            >
+          </div>
+        </mat-form-field>
+      </div>
+      <div class="checkboxes">
+        <mat-label class="fw-bold fs-5">Hobbies</mat-label>
+        <section class="m-2">
+          <mat-checkbox class="example-margin">Reading Books</mat-checkbox>
+          <mat-checkbox class="example-margin">Badminton</mat-checkbox>
+          <mat-checkbox class="example-margin">Tracking </mat-checkbox>
+          <mat-checkbox class="example-margin">Travelling</mat-checkbox>
+          <mat-checkbox class="example-margin">Video Games</mat-checkbox>
+        </section>
+      </div>
+      <div class="radio-btn">
+        <mat-label class="fw-bold fs-5 d-block">Gender</mat-label>
+        <mat-radio-group
+          aria-label="Select an option"
+          formControlName="gender"
+          id="gender"
+        >
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+          <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+
+        <div
+          *ngIf="
+            validateForm().gender?.invalid &&
+            (validateForm().gender?.dirty ||
+              validateForm().gender?.touched ||
+              isSubmitted)
+          "
+        >
+          <small class="m-3" *ngIf="validateForm().gender?.errors?.['required']"
+            >Gender is required.</small
+          >
+        </div>
+      </div>
+
+      <button class="mt-4 mx-auto d-block" mat-raised-button color="accent">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

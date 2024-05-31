@@ -1,0 +1,28 @@
+<nav>
+  <section class="navbar">
+    <div class="logo-container">
+      <h1>BookShelf</h1>
+    </div>
+    <div class="menu-item-container">
+      <ul class="items">
+        <li *ngIf="authService.isLoggedIn()" class="list-item">
+          <a routerLink="">Home</a>
+        </li>
+        <li *ngIf="!authService.isLoggedIn()" class="list-item">
+          <a routerLink="signup">SignUp</a>
+        </li>
+        <li *ngIf="!authService.isLoggedIn()" class="list-item">
+          <a routerLink="login">Login</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()" class="list-item">
+          <a (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</nav>
+<main class="main">
+  <div class="content">
+    <router-outlet />
+  </div>
+</main>
