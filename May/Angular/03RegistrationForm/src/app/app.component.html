@@ -15,12 +15,16 @@
           <a routerLink="login">Login</a>
         </li>
         <li *ngIf="authService.isLoggedIn()" class="list-item">
-          <a (click)="logout()">Logout</a>
+          <a class="logout" (click)="logout()">Logout</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()" class="">
+          <a class="name">Hello, {{ currUser.firstName }}</a>
         </li>
       </ul>
     </div>
   </section>
 </nav>
+
 <main class="main">
   <div class="content">
     <router-outlet />

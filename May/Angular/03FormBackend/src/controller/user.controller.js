@@ -62,7 +62,11 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (existedUser) {
-    throw new ApiError(409, "User already exists");
+    // throw new ApiError(409, "User already exists");
+    return res.status(409).json({
+      msg: "User already exists",
+      success: false,
+    });
   }
 
   const user = await User.create({
@@ -79,7 +83,11 @@ const registerUser = asyncHandler(async (req, res) => {
   );
 
   if (!createdUser) {
-    throw new ApiError(500, "User creation failed");
+    // throw new ApiError(500, "User creation failed");
+    return res.status(500).json({
+      msg: "User creation failed",
+      success: false,
+    });
   }
 
   return res
@@ -107,13 +115,20 @@ const loginUser = asyncHandler(async (req, res) => {
   });
 
   if (!user) {
-    throw new ApiError(404, "User not found");
+    return res.status(400).json({
+      msg: "User not found with this email",
+      success: false,
+    });
+    // throw new ApiError(404, "User not found");
   }
 
   const isPasswordValid = await user.isPasswordCorrect(password);
 
   if (!isPasswordValid) {
-    throw new ApiError(400, "Password is incorrect");
+    return res.status(400).json({
+      msg: "Password is incorrect",
+      success: false,
+    });
   }
 
   const { refreshToken, accessToken } = await generateAccessAndRefreshToken(

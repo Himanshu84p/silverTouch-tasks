@@ -1,4 +1,4 @@
-<div class="main mx-auto">
+<div class="main mx-auto shadow-lg">
   <h1 class="text-center">Login</h1>
   <div class="from-container">
     <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -64,9 +64,9 @@
       </div>
 
       <!-- //error message if credentials are wrong -->
-      <div *ngIf="errorMessage">
+      <!-- <div *ngIf="errorMessage">
         <small class="font-size">{{errorMessage}}</small>
-      </div>
+      </div> -->
       <button
         class="mt-4 mx-auto d-block"
         mat-raised-button

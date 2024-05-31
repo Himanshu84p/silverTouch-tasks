@@ -14,7 +14,7 @@ export class HomeComponent {
     //navigate user as per login
     if (authService.isLoggedIn()) {
       this.router.navigate(['/']);
-      console.log(sessionStorage.getItem('user'));
+      console.log(localStorage.getItem('user'));
     } else {
       this.router.navigate(['login']);
     }

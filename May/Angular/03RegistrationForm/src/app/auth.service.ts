@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/v1/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   //Register user
   register(user: any): Observable<any> {
@@ -28,14 +28,14 @@ export class AuthService {
       .pipe(
         map((response: any) => {
           if (response.success) {
-            // Save access token to memory or sessionStorage
+            // Save access token to memory or localStorage
             if (response.message.accessToken) {
-              sessionStorage.setItem(
+              localStorage.setItem(
                 'accessToken',
                 response.message.accessToken
               );
               let currUser = JSON.stringify(response.message.user);
-              sessionStorage.setItem('user', currUser);
+              localStorage.setItem('user', currUser);
             }
             // Save refresh token to httpOnly cookie
             if (response.message.refreshToken) {
@@ -52,19 +52,19 @@ export class AuthService {
 
   //logout user
   logout(): void {
-    sessionStorage.removeItem('accessToken');
-    sessionStorage.removeItem('user');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
     this.deleteRefreshToken();
   }
 
   // Check if user is logged in
   isLoggedIn(): boolean {
-    return !!sessionStorage.getItem('accessToken');
+    return !!localStorage.getItem('accessToken');
   }
 
   // Get token from local storage
   getAccessToken(): string | null {
-    return sessionStorage.getItem('accessToken');
+    return localStorage.getItem('accessToken');
   }
 
   //set refresh tojen as httpOnly cookie

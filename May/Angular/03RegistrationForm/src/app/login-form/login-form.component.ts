@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { HotToastService } from '@ngxpert/hot-toast';
 
 @Component({
   selector: 'app-login-form',
@@ -34,6 +36,7 @@ export class LoginFormComponent {
   isSubmitted = false;
   hide = true;
   errorMessage: string = '';
+  private toastService = inject(HotToastService);
   //defining constructor for form using formbuilder
   constructor(
     private fb: FormBuilder,
@@ -58,20 +61,34 @@ export class LoginFormComponent {
       password: this.getUserFormControl('password'),
     };
   }
+  showSuccessToast(message: string) {
+    this.toastService.success(message)
+  }
+  showErrorToast(message: string) {
+    this.toastService.error(message)
+  }
+
 
   //on submit function checks the valid form input or not
   onSubmit() {
     try {
+
       this.isSubmitted = true;
+
       if (this.loginForm.valid) {
+        this.toastService.loading("Signing in....", { "id": "sign_in" })
         this.authService.login(this.loginForm.value).subscribe(
           (response) => {
             console.log('Registration successful', response);
+            this.toastService.close("sign_in")
+            this.showSuccessToast("Login SuccessFully")
             this.router.navigate(['/']);
           },
-          (error) => {
-            console.log('Registration failed', error);
-            this.errorMessage = 'Enter Valid Credentials';
+          (error: HttpErrorResponse) => {
+            console.log('Registration failed', error.error.msg);
+            this.toastService.close("sign_in")
+            this.showErrorToast(error.error.msg)
+            this.errorMessage = error.error.msg;
           }
         );
         console.log('Form Submitted and data is here', this.loginForm.value);
