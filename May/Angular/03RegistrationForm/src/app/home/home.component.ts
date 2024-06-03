@@ -10,13 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor(public authService: AuthService, private router: Router) {
-    //navigate user as per login
-    if (authService.isLoggedIn()) {
-      this.router.navigate(['/']);
-      console.log(localStorage.getItem('user'));
-    } else {
-      this.router.navigate(['login']);
-    }
-  }
+
 }

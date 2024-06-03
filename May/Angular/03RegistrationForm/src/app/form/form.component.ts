@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import {
@@ -32,6 +32,7 @@ import { HotToastService } from '@ngxpert/hot-toast';
     MatRadioModule,
     MatButtonModule,
     MatIconModule,
+    RouterLink
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
@@ -90,7 +91,7 @@ export class FormComponent {
             console.log('Registration successful', response);
             this.toastService.close("sign_up")
             this.showSuccessToast("Signup SuccessFully")
-            this.router.navigate(['login']);
+            this.router.navigateByUrl('auth/login');
           },
           (error) => {
             console.log('Registration failed', error);

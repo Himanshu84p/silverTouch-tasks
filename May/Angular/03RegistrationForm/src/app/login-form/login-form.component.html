@@ -4,6 +4,10 @@
     <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="inputfields">
         <!-- email  -->
+        <p class="text-center">
+          Already have an account? <a routerLink="auth/register">SignUp</a>
+        </p>
+
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
           <input

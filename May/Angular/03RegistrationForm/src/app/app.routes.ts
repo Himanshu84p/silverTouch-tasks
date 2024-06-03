@@ -1,33 +1,40 @@
 import { Routes } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { authGaurdGuard } from './guard/auth-gaurd.guard';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 //routes to navigate component
 export const routes: Routes = [
   {
     path: '',
-    title: 'Home',
-    component: HomeComponent,
+    redirectTo: '/dashboard/home',
+    pathMatch: 'full',
   },
   {
-    path: 'signup',
-    title: 'Signup',
-    component: FormComponent,
+    path: 'dashboard',
+    component: MainLayoutComponent,
+    canActivate: [authGaurdGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home', component: HomeComponent, title: 'Home',
+        pathMatch: 'full',
+      },
+    ]
   },
   {
-    path: 'login',
-    title: 'Login',
-    loadComponent: () =>
-      import('./login-form/login-form.component').then(
-        (m) => m.LoginFormComponent
-      ),
-  },
-  {
-    path: 'error',
-    title: 'Error',
-    loadComponent: () =>
-      import('./error/error.component').then(
-        (m) => m.ErrorComponent
-      ),
-  },
+    path: 'auth',
+    component: AuthLayoutComponent,
+    children: [
+      { path: 'login', component: LoginFormComponent, title: "SignIn" },
+      { path: 'register', component: FormComponent, title: "SignUp" }
+    ]
+  }
 ];

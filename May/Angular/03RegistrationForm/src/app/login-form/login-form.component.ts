@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { HotToastService } from '@ngxpert/hot-toast';
 
@@ -27,6 +27,7 @@ import { HotToastService } from '@ngxpert/hot-toast';
     FormsModule,
     MatButtonModule,
     MatIconModule,
+    RouterLink
   ],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css',
@@ -61,6 +62,7 @@ export class LoginFormComponent {
       password: this.getUserFormControl('password'),
     };
   }
+
   showSuccessToast(message: string) {
     this.toastService.success(message)
   }
@@ -82,7 +84,7 @@ export class LoginFormComponent {
             console.log('Registration successful', response);
             this.toastService.close("sign_in")
             this.showSuccessToast("Login SuccessFully")
-            this.router.navigate(['/']);
+            this.router.navigateByUrl('dashboard/home');
           },
           (error: HttpErrorResponse) => {
             console.log('Registration failed', error.error.msg);
