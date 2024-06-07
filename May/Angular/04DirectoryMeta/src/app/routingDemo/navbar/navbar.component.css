@@ -1,0 +1,24 @@
+.active_item {
+  color: black;
+  font-weight: 600;
+  color: coral;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.list-items {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  margin: 3rem 1rem;
+}

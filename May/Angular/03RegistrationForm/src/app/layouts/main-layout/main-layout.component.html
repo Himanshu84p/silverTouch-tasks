@@ -6,7 +6,12 @@
     <div class="menu-item-container">
       <ul class="items">
         <li *ngIf="authService.isLoggedIn()" class="list-item">
-          <a class="home" routerLink="dashboard">Home</a>
+          <a
+            class="home"
+            routerLink="/dashboard/home/"
+            routerLinkActive="active_item"
+            >Home</a
+          >
         </li>
         <li *ngIf="authService.isLoggedIn()" class="list-item">
           <a class="logout" (click)="logout()">Logout</a>

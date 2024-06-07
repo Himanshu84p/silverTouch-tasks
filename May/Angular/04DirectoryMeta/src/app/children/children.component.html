@@ -1,0 +1,12 @@
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+
+<p>Parent text is here : {{ Name }}</p>
+
+<input type="text" #child (keydown)="getInput(child.value)" />
+
+<h2> Change the city</h2>
+<p>City is {{city}}</p>
+<button (click)="changeCity()">Change City</button>

@@ -70,3 +70,7 @@ a:hover {
   flex: 2;
   justify-content: flex-end;
 }
+.active_item {
+  color: #ff7000 !important;
+  background-color: red !important;
+}

@@ -5,6 +5,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { authGaurdGuard } from './guard/auth-gaurd.guard';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { ErrorComponent } from './error/error.component';
 
 //routes to navigate component
 export const routes: Routes = [
@@ -18,14 +19,16 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     canActivate: [authGaurdGuard],
     children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
+      // {
+      //   path: '',
+      //   redirectTo: 'home',
+      //   pathMatch: 'full'
+      // },
       {
         path: 'home', component: HomeComponent, title: 'Home',
-        pathMatch: 'full',
+      },
+      {
+        path: '**', component: ErrorComponent, title: 'Unauthorized',
       },
     ]
   },
@@ -34,7 +37,10 @@ export const routes: Routes = [
     component: AuthLayoutComponent,
     children: [
       { path: 'login', component: LoginFormComponent, title: "SignIn" },
-      { path: 'register', component: FormComponent, title: "SignUp" }
+      { path: 'register', component: FormComponent, title: "SignUp" },
+      {
+        path: '**', component: ErrorComponent, title: 'Unauthorized',
+      },
     ]
   }
 ];

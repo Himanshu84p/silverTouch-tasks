@@ -1,0 +1,4 @@
+<p>I am parent</p>
+<input type="text" #name (keydown)="(0)" />
+<p>child input coming {{val}}</p>
+<app-children [Name]="name.value" (childInput)="val=$event"></app-children>
