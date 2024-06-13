@@ -78,3 +78,5 @@ AsyncPipe
 ## Reactive Form
 
 --> Set and patch value. use patch for only some data update and set for whole data update including id.
+
+## Get Value & Status Change
