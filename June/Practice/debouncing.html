@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing Example</title>
+  </head>
+  <body>
+    <input type="text" id="searchBox" placeholder="Type to search..." />
+
+    <script>
+      const searchBox = document.getElementById("searchBox");
+
+      function fetchSuggestions(query) {
+        console.log("Fetching input", query);
+      }
+
+      //   its a version of fetchSuggestions with parameter what is debounceFetchSuggestions gets
+      const debounceFetchSuggestions = debounce1(fetchSuggestions, 300);
+
+      searchBox.addEventListener("input", (event) => {
+        debounceFetchSuggestions(event.target.value);
+      });
+
+      //main debounce function that call the fetchSugggestion with wait
+      function debounce1(func, wait) {
+        let timeout;
+        return function executeFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+    </script>
+  </body>
+</html>
